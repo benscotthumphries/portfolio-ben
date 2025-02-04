@@ -1,28 +1,32 @@
 "use client";
-import { Roboto } from "next/font/google";
+"use client";
 import { createTheme } from "@mui/material/styles";
-
-const roboto = Roboto({
-  weight: ["300", "400", "500", "700"],
-  subsets: ["latin"],
-  display: "swap",
-});
 
 const theme = createTheme({
   palette: {
-    mode: "light",
-  },
-  typography: {
-    fontFamily: roboto.style.fontFamily,
+    mode: "dark",
+    background: {
+      default: "#2C3E50", // Fallback solid color (dark steel blue)
+      paper: "#1E1E1E",
+    },
+    primary: {
+      main: "#BEBEBE",
+    },
+    text: {
+      primary: "#ffffff",
+    },
   },
   components: {
-    MuiAlert: {
+    MuiCssBaseline: {
       styleOverrides: {
-        root: ({ ownerState }) => ({
-          ...(ownerState.severity === "info" && {
-            backgroundColor: "#60a5fa",
-          }),
-        }),
+        body: {
+          background: "linear-gradient(135deg, #141e30, #2C3E50)", // Properly applied gradient
+          backgroundAttachment: "fixed",
+          minHeight: "100vh",
+          margin: 0,
+          padding: 0,
+          color: "#ffffff",
+        },
       },
     },
   },
