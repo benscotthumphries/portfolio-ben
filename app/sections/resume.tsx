@@ -1,53 +1,48 @@
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
-import { IconButton, Paper, Tooltip } from '@mui/material';
+import React, { forwardRef } from 'react';
+import { Typography, Box, IconButton, Paper, Tooltip } from '@mui/material';
 import GetAppIcon from "@mui/icons-material/GetApp";
 
-function Resume() {
+const Resume = forwardRef<HTMLDivElement, {}>((props, ref) => {
   return (
     <>
-      <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", my: 4, width: "100%" }}>
-        <Typography variant="h3" sx={{ color: "#009688", fontWeight: "bold", flexGrow: 1 }}>
+      {/* Header with "My Resume" centered */}
+      <Box sx={{ width: "100%", display: "flex", justifyContent: "center", my: 4 }}>
+        <Typography variant="h3" sx={{ color: "#ffffff", fontWeight: "bold" }} ref={ref}>
           My Resume
         </Typography>
-        <Tooltip title="Download My Resume">
-          <IconButton
-            href="/Ben_Humphries_Resume.pdf"
-            target="_blank"
-            download
-            sx={{
-              backgroundColor: "#009688",
-              color: "#ffffff",
-              padding: "0.5rem",
-              borderRadius: "50%",
-              boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
-              '&:hover': {
-                backgroundColor: "#00796b",
-                animation: 'bounce 0.6s ease-in-out', // Bounce effect on hover
-              },
-              '@keyframes bounce': {
-                '0%': {
-                  transform: 'scale(1)',
-                },
-                '50%': {
-                  transform: 'scale(1.1)', // Bounce up
-                },
-                '100%': {
-                  transform: 'scale(1)', // Return to original size
-                },
-              },
-            }}
-          >
-            <GetAppIcon sx={{ fontSize: "1.5rem" }} />
-          </IconButton>
-        </Tooltip>
       </Box>
-      <Paper sx={{ padding: "1.5rem", backgroundColor: "#121212", color: "#ffffff", borderRadius: "10px", mb: 2, textAlign: "left" }}>
+
+      {/* Resume content */}
+      <Paper sx={{ padding: "1.5rem", backgroundColor: "#121212", color: "#ffffff", borderRadius: "10px", mb: 2, textAlign: "left", position: "relative" }}>
+        {/* Download Button positioned inside the Paper, aligned with resume content */}
+        <Box sx={{ position: "absolute", top: "20px", right: "20px" }}>
+          <Tooltip title="Download My Resume">
+            <IconButton
+              href="/Ben_Humphries_Resume.pdf"
+              target="_blank"
+              download
+              sx={{
+                backgroundColor: "#009688",
+                color: "#ffffff",
+                padding: "0.5rem",
+                borderRadius: "50%",
+                boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
+                '&:hover': {
+                  backgroundColor: "#00796b",
+                  animation: 'bounce 0.6s ease-in-out',
+                },
+              }}
+            >
+              <GetAppIcon sx={{ fontSize: "1.5rem" }} />
+            </IconButton>
+          </Tooltip>
+        </Box>
+
         {/* Contact Information */}
-        < Typography variant="h6" sx={{ fontWeight: "bold", mb: 1, textAlign: "center" }}>
+        <Typography variant="h6" sx={{ fontWeight: "bold", mb: 1 }}>
           Ben Humphries
-        </Typography >
-        <Typography variant="body1" sx={{ textAlign: "center" }}>
+        </Typography>
+        <Typography variant="body1" sx={{ mb: 2 }}>
           📧 benscotthumphries@gmail.com | 📞 (505) 459-3819
         </Typography>
 
@@ -149,9 +144,26 @@ function Resume() {
         <Typography variant="body1" sx={{ mt: 1 }}>
           🦅 Eagle Scout | 🤿 Open Water Scuba Certified (Got lost at sea for an hour!) | 💻 Tech Enthusiast
         </Typography>
-      </Paper >
+      </Paper>
+
+      <style jsx>{`
+        @keyframes bounce {
+          0% {
+            transform: scale(1);
+          }
+          50% {
+            transform: scale(1.1); // Bounce effect
+          }
+          100% {
+            transform: scale(1);
+          }
+        }
+      `}</style>
     </>
   );
-}
+});
+
+// Set the displayName for debugging purposes
+Resume.displayName = "Resume";
 
 export default Resume;
