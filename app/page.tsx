@@ -40,7 +40,7 @@ function Home() {
         <Intro />
         <AboutMe />
         <Resume />
-        <Projects projects={projects} />
+        {/* <Projects projects={projects} /> */}
       </Box>
     </Container>
   );
