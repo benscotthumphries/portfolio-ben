@@ -1,12 +1,13 @@
 import React, { useState, useEffect, forwardRef } from "react";
 import { Container, Box, Typography, IconButton } from "@mui/material";
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import TwitterIcon from '@mui/icons-material/Twitter';
 import Typewriter from "../components/typewriter";
 import { useTheme } from '@mui/material/styles';
 
-interface IntroProps {
-  // You can define additional props here if needed
-}
+interface IntroProps { }
 
 const Intro = forwardRef<HTMLDivElement, IntroProps>((props, ref) => {
   const theme = useTheme();
@@ -44,6 +45,7 @@ const Intro = forwardRef<HTMLDivElement, IntroProps>((props, ref) => {
         justifyContent: "center",
         alignItems: "center",
         pt: "8vh",
+        position: "relative",
       }}
     >
       <Box
@@ -79,6 +81,45 @@ const Intro = forwardRef<HTMLDivElement, IntroProps>((props, ref) => {
         Ben Humphries
       </Typography>
 
+      {/* Social Media Icons */}
+      <Box
+        sx={{
+          display: 'flex',
+          justifyContent: 'center',
+          gap: 3,
+          mb: '3vh',
+        }}
+      >
+        <IconButton
+          component="a"
+          href="https://github.com/benscotthumphries"
+          target="_blank"
+          rel="noopener noreferrer"
+          sx={{
+            color: theme.palette.text.primary,
+            '&:hover': {
+              color: theme.palette.primary.main,
+            },
+          }}
+        >
+          <GitHubIcon fontSize="large" />
+        </IconButton>
+        <IconButton
+          component="a"
+          href="https://www.linkedin.com/in/benjamin-humphries/"
+          target="_blank"
+          rel="noopener noreferrer"
+          sx={{
+            color: theme.palette.text.primary,
+            '&:hover': {
+              color: theme.palette.primary.main,
+            },
+          }}
+        >
+          <LinkedInIcon fontSize="large" />
+        </IconButton>
+      </Box>
+
       <Box sx={{ minHeight: "60px" }}>
         <Typewriter words={words} />
       </Box>
@@ -97,11 +138,12 @@ const Intro = forwardRef<HTMLDivElement, IntroProps>((props, ref) => {
         <Typography variant="h5" sx={{ color: theme.palette.text.primary }}>
           I&apos;m a dedicated Software Engineer with a passion for creating innovative solutions.
           With years of experience in software development, I&apos;ve worked on building websites,
-          developing DevSecOps tools, and managing containers and CI/CD pipelines.
+          developing DevSecOps tools, creating containers and CI/CD pipelines.
           When I&apos;m not coding, I love exploring new technologies, spending time outdoors, or enjoying moments with my family.
         </Typography>
       </Box>
 
+      {/* Scroll down arrow icon */}
       <Box sx={{ position: "absolute", bottom: "20px", cursor: "pointer" }}>
         <IconButton
           onClick={scrollToNextSection}
@@ -137,7 +179,6 @@ const Intro = forwardRef<HTMLDivElement, IntroProps>((props, ref) => {
   );
 });
 
-// Set displayName for better debugging in React DevTools
 Intro.displayName = 'Intro';
 
 export default Intro;

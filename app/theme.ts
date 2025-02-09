@@ -6,7 +6,7 @@ const theme = createTheme({
   palette: {
     mode: "dark",
     background: {
-      default: "#2C3E50", // Fallback solid color (dark steel blue)
+      default: "#2C3E50",
       paper: "#1E1E1E",
     },
     primary: {
@@ -20,7 +20,7 @@ const theme = createTheme({
     MuiCssBaseline: {
       styleOverrides: {
         body: {
-          background: "linear-gradient(135deg, #141e30, #2C3E50)", // Properly applied gradient
+          background: "linear-gradient(135deg, #141e30, #2C3E50)",
           backgroundAttachment: "fixed",
           minHeight: "100vh",
           margin: 0,

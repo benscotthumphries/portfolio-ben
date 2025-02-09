@@ -13,12 +13,21 @@ const Resume = forwardRef<HTMLDivElement, {}>((props, ref) => {
       </Box>
 
       {/* Resume content */}
-      <Paper sx={{ padding: "1.5rem", backgroundColor: "#121212", color: "#ffffff", borderRadius: "10px", mb: 2, textAlign: "left", position: "relative" }}>
+      <Paper sx={{
+        padding: "1.5rem",
+        backgroundColor: "rgba(18, 18, 18, 0.9)", // Slightly lighter than pure black with opacity
+        color: "#ffffff",
+        borderRadius: "10px",
+        mb: 2,
+        textAlign: "left",
+        position: "relative",
+        boxShadow: "0 4px 20px rgba(0, 0, 0, 0.5)", // Soft shadow around the Paper
+      }}>
         {/* Download Button positioned inside the Paper, aligned with resume content */}
         <Box sx={{ position: "absolute", top: "20px", right: "20px" }}>
           <Tooltip title="Download My Resume">
             <IconButton
-              href="/Ben_Humphries_Resume.pdf"
+              href="/humphries.benjamin.pdf"
               target="_blank"
               download
               sx={{
@@ -39,11 +48,11 @@ const Resume = forwardRef<HTMLDivElement, {}>((props, ref) => {
         </Box>
 
         {/* Contact Information */}
-        <Typography variant="h6" sx={{ fontWeight: "bold", mb: 1 }}>
+        <Typography variant="h6" sx={{ fontWeight: "bold", mb: 1, textAlign: "center" }}>
           Ben Humphries
         </Typography>
-        <Typography variant="body1" sx={{ mb: 2 }}>
-          📧 benscotthumphries@gmail.com | 📞 (505) 459-3819
+        <Typography variant="body1" sx={{ mb: 2, textAlign: "center" }}>
+          benscotthumphries@gmail.com | (505) 459-3819
         </Typography>
 
         {/* Education */}
@@ -68,8 +77,8 @@ const Resume = forwardRef<HTMLDivElement, {}>((props, ref) => {
           Professional Experience
         </Typography>
 
-        <Typography variant="body1" sx={{ mt: 2 }}>
-          <strong>Northrop Grumman</strong> - Software Engineer (Oct 2024 - Present)
+        <Typography variant="body1" sx={{ mt: 2, fontSize: "1.1rem", fontWeight: "bold" }}>
+          Northrop Grumman - Software Engineer (Oct 2024 - Present)
         </Typography>
         <Typography variant="body1" sx={{ mt: 1 }}>
           - Developed a web-based tool to automate software deployment onto appropriate hardware in testing labs, streamlining workflows.
@@ -81,8 +90,8 @@ const Resume = forwardRef<HTMLDivElement, {}>((props, ref) => {
           - Led agile teams as a Scrum Master, mentoring engineers and ensuring project milestones.
         </Typography>
 
-        <Typography variant="body1" sx={{ mt: 2 }}>
-          <strong>Northrop Grumman</strong> - Associate Software Engineer (June 2023 - Oct 2024)
+        <Typography variant="body1" sx={{ mt: 2, fontSize: "1.1rem", fontWeight: "bold" }}>
+          Northrop Grumman - Associate Software Engineer (June 2023 - Oct 2024)
         </Typography>
         <Typography variant="body1" sx={{ mt: 1 }}>
           - Built a web application using React and Go to coordinate artifact delivery and optimize testing lab workflows.
@@ -97,8 +106,8 @@ const Resume = forwardRef<HTMLDivElement, {}>((props, ref) => {
           - Created Ansible scripts for infrastructure automation, reducing setup times.
         </Typography>
 
-        <Typography variant="body1" sx={{ mt: 2 }}>
-          <strong>Brigham Young University</strong> - Full-Stack Software Engineer (Jul 2021 - Apr 2023)
+        <Typography variant="body1" sx={{ mt: 2, fontSize: "1.1rem", fontWeight: "bold" }}>
+          Brigham Young University - Full-Stack Software Engineer (Jul 2021 - Apr 2023)
         </Typography>
         <Typography variant="body1" sx={{ mt: 1 }}>
           - Developed Vue & C# applications for managing graduate contracts, enhancing workflow efficiency.
@@ -110,8 +119,8 @@ const Resume = forwardRef<HTMLDivElement, {}>((props, ref) => {
           - Built REST APIs in C# with ASP.NET core for database management.
         </Typography>
 
-        <Typography variant="body1" sx={{ mt: 2 }}>
-          <strong>Partners Personnel</strong> - Software Engineering Intern (Sept 2022 - Apr 2023)
+        <Typography variant="body1" sx={{ mt: 2, fontSize: "1.1rem", fontWeight: "bold" }}>
+          Partners Personnel - Software Engineering Intern (Sept 2022 - Apr 2023)
         </Typography>
         <Typography variant="body1" sx={{ mt: 1 }}>
           - Developed a Django-based web app to automate payroll processing, reducing payroll time by 8 hours per cycle.

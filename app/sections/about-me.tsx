@@ -1,26 +1,47 @@
-import React, { useState, forwardRef, MutableRefObject, useEffect } from "react";
-import { Container, Box, Typography, IconButton } from "@mui/material";
+import React, { forwardRef, MutableRefObject } from "react";
+import { Container, Box, Typography, IconButton, Grid, Chip } from "@mui/material";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
-import Image from "next/image";
 import theme from "../theme";
 
-// Update the props typing to accept both ref and resumeRef with a more specific type
 interface AboutMeProps {
-  resumeRef: MutableRefObject<HTMLElement | null>; // Change to HTMLElement | null to allow DOM methods
+  resumeRef: MutableRefObject<HTMLElement | null>;
 }
 
-const AboutMe = forwardRef<HTMLDivElement, AboutMeProps>((props, ref) => {
-  const { resumeRef } = props;  // Destructure resumeRef from props
-  const [isBouncing, setIsBouncing] = useState(true);
 
+const skillColors: { [key: string]: string } = {
+  React: "#61DAFB",
+  "Next.js": "#000000",
+  TypeScript: "#3178C6",
+  Go: "#00ADD8",
+  Python: "#FFD43B",
+  "C#": "#9B4F96",
+  SQL: "#4479A1",
+  Postgres: "#336791",
+  MySQL: "#00758F",
+  "REST APIs": "#FF5733",
+  Docker: "#2496ED",
+  Podman: "#892CA0",
+  Ansible: "#EE0000",
+  Kubernetes: "#326CE5",
+  "CI/CD": "#F16529",
+  "GitLab CI": "#FC6D26",
+  SonarQube: "#4E9BCD",
+  Fortify: "#5C2D91",
+  Coverity: "#005571",
+  Jest: "#99425B",
+  Linux: "#FCC624",
+  Agile: "#F7B500",
+};
+
+
+const AboutMe = forwardRef<HTMLDivElement, AboutMeProps>(({ resumeRef }, ref) => {
   const scrollToResume = () => {
-    // Check if resumeRef.current is not null and call scrollIntoView
     resumeRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
     <Container
-      maxWidth="md"
+      maxWidth="lg"
       id="aboutMe"
       ref={ref}
       sx={{
@@ -30,25 +51,97 @@ const AboutMe = forwardRef<HTMLDivElement, AboutMeProps>((props, ref) => {
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        padding: "2rem",
+        padding: "4rem 2rem",
         position: "relative",
       }}
     >
-      <Typography variant="h3" sx={{ color: "#ffffff", fontWeight: "bold", mb: 3 }}>
-        About Me
-      </Typography>
+      <Box sx={{ width: "100%", display: "flex", justifyContent: "center", mb: 2 }}>
+        <Typography variant="h3" sx={{ color: "#ffffff", fontWeight: "bold" }} ref={ref}>
+          About Me
+        </Typography>
+      </Box>
 
-      <Typography variant="body1" sx={{ color: "#ffffff", mb: 3, maxWidth: "800px" }}>
-        Hey there! I&apos;m <strong>Ben Humphries</strong>, a Software Engineer passionate about creating innovative
-        and scalable solutions. I thrive in fast-paced environments, optimizing workflows, and mentoring others
-        to reach their full potential. With experience in front-end, back-end, and cloud-based development,
-        I build tools that make a difference.
-      </Typography>
+      {/* Background Blur Effect */}
+      <Box
+        sx={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          backgroundImage: "url('/background.jpg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          filter: "blur(10px)",
+          zIndex: -1,
+        }}
+      />
 
-      <Box sx={{ display: "flex", justifyContent: "center", gap: "20px", flexWrap: "wrap", mb: 3 }}>
-        <Image src="/coding.jpg" alt="Coding" width={200} height={200} style={{ borderRadius: "10px" }} />
-        <Image src="/teamwork.jpg" alt="Teamwork" width={200} height={200} style={{ borderRadius: "10px" }} />
-        <Image src="/scuba.jpg" alt="Scuba Diving" width={200} height={200} style={{ borderRadius: "10px" }} />
+      {/* About Me Section */}
+      <Box
+        sx={{
+          background: "rgba(255, 255, 255, 0.1)",
+          backdropFilter: "blur(10px)",
+          borderRadius: "20px",
+          padding: "30px",
+          boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
+        }}
+      >
+        <Typography variant="body1" sx={{ color: "#ffffff", maxWidth: "800px", mx: "auto" }}>
+          Hi! I&apos;m <strong>Ben Humphries</strong>, a passionate Software Engineer with expertise in full-stack development,
+          DevSecOps, and Agile methodologies. I graduated from <strong>Brigham Young University</strong> with a B.S. in
+          Computer Science and a minor in Business Administration. I am currently open to work and seeking new opportunities.
+          I will be moving to Anchorage in April 2025 so looking for remote work or roles located in Anchorage, Alaska.
+        </Typography>
+      </Box>
+
+      {/* Experience & Projects */}
+      <Box
+        sx={{
+          background: "rgba(255, 255, 255, 0.1)",
+          backdropFilter: "blur(10px)",
+          borderRadius: "20px",
+          padding: "30px",
+          mt: "3vh",
+          boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
+        }}
+      >
+        <Typography variant="h4" sx={{ color: "#ffffff", fontWeight: "bold", mb: 2 }}>
+          Tech Stack & Skills
+        </Typography>
+        <Grid container spacing={1} justifyContent="center">
+          {Object.keys(skillColors).map((skill) => (
+            <Grid item key={skill}>
+              <Chip
+                label={skill}
+                sx={{
+                  backgroundColor: skillColors[skill],
+                  color: "#ffffff",
+                  fontWeight: "bold",
+                }}
+              />
+            </Grid>
+          ))}
+        </Grid>
+
+        <Typography variant="h4" sx={{ color: "#ffffff", fontWeight: "bold", my: 2 }}>
+          Experience & Projects
+        </Typography>
+        <Typography variant="body1" sx={{ color: "#ffffff", maxWidth: "800px", mx: "auto", mb: 3 }}>
+          I&apos;m currently a Software Engineer at <strong>Northrop Grumman</strong>. I started as an Associate Software Engineer on a DevSecOps team,
+          developing CI/CD pipelines, build scripts, and containerized applications. Later, I took on a Scrum Master role, refining my leadership skills.
+          After just 18 months, I was promoted to Software Engineer, where I lead the development of multiple web applications for managing software
+          deployment and automation. My contributions have been recognized with multiple awards.
+        </Typography>
+        <Typography variant="body1" sx={{ color: "#ffffff", maxWidth: "800px", mx: "auto", mb: 3 }}>
+          Previously, at <strong>BYU</strong>, I worked as a Software Developer for the College of Life Sciences, creating and maintaining applications
+          in React and C#. As Team Lead, I managed code reviews, created user stories, and built a Vue-based system to digitize the college’s
+          graduate contract process.
+        </Typography>
+        <Typography variant="body1" sx={{ color: "#ffffff", maxWidth: "800px", mx: "auto" }}>
+          For my capstone, I collaborated with <strong>Partners Personnel</strong> to develop a Django-based payroll application that automated
+          pay card processing, significantly increasing efficiency.
+        </Typography>
       </Box>
 
       {/* Bottom Arrow Button */}
@@ -67,28 +160,15 @@ const AboutMe = forwardRef<HTMLDivElement, AboutMeProps>((props, ref) => {
       {/* Bounce Animation */}
       <style jsx>{`
         @keyframes bounce {
-          0% {
-            transform: translateY(0);
-          }
-          25% {
-            transform: translateY(-10px);
-          }
-          50% {
-            transform: translateY(0);
-          }
-          75% {
-            transform: translateY(-5px);
-          }
-          100% {
-            transform: translateY(0);
-          }
+          0%, 50%, 100% { transform: translateY(0); }
+          25% { transform: translateY(-10px); }
+          75% { transform: translateY(-5px); }
         }
       `}</style>
     </Container>
   );
 });
 
-// Set displayName for better debugging in React DevTools
-AboutMe.displayName = 'AboutMe';
+AboutMe.displayName = "AboutMe";
 
 export default AboutMe;
