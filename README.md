@@ -1,4 +1,5 @@
 ## This is my main portfolio website built with Next.js.
+You can view the live site [here](https://benscotthumphries.github.io/portfolio-ben)
 
 ## Getting Started
 
