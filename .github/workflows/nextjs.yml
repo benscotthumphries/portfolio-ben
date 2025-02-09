@@ -33,7 +33,6 @@ jobs:
       - name: Detect package manager
         id: detect-package-manager
         run: |
-@@ -48,39 +38,27 @@ jobs:
             echo "Unable to determine package manager"
             exit 1
           fi
