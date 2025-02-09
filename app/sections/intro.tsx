@@ -34,7 +34,7 @@ const Intro = forwardRef<HTMLDivElement, IntroProps>((props, ref) => {
 
   return (
     <Container
-      maxWidth="md"
+      maxWidth="lg"
       ref={ref}
       sx={{
         textAlign: "center",
@@ -45,6 +45,8 @@ const Intro = forwardRef<HTMLDivElement, IntroProps>((props, ref) => {
         alignItems: "center",
         pt: "8vh",
         position: "relative",
+        "@media (max-width: 1200px)": { maxWidth: "md" },
+        "@media (max-width: 900px)": { maxWidth: "sm" },
       }}
     >
       <Box
@@ -65,7 +67,7 @@ const Intro = forwardRef<HTMLDivElement, IntroProps>((props, ref) => {
       >
         <Box
           component="img"
-          src="professionalPic.jpg"
+          src="professionalPic.jpg" // Ensure the image is in the correct path relative to this component
           alt="Ben Humphries"
           sx={{
             width: "100%",
@@ -123,6 +125,7 @@ const Intro = forwardRef<HTMLDivElement, IntroProps>((props, ref) => {
         <Typewriter words={words} />
       </Box>
 
+      {/* Intro Text Section */}
       <Box
         sx={{
           background: "rgba(255, 255, 255, 0.1)",
@@ -131,6 +134,8 @@ const Intro = forwardRef<HTMLDivElement, IntroProps>((props, ref) => {
           padding: "20px",
           mb: "10vh",
           boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
+          maxWidth: "800px",
+          mx: "auto",
         }}
       >
         <Typography variant="h6" sx={{ color: theme.palette.text.primary }}>
@@ -141,7 +146,7 @@ const Intro = forwardRef<HTMLDivElement, IntroProps>((props, ref) => {
         </Typography>
       </Box>
 
-      {/* Scroll down arrow icon */}
+      {/* Scroll down arrow icon moved to the bottom */}
       <Box sx={{ position: "absolute", bottom: "5vh", cursor: "pointer" }}>
         <IconButton
           onClick={scrollToNextSection}

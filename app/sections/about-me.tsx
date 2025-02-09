@@ -60,22 +60,6 @@ const AboutMe = forwardRef<HTMLDivElement, AboutMeProps>(({ resumeRef }, ref) =>
         </Typography>
       </Box>
 
-      {/* Background Blur Effect */}
-      <Box
-        sx={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100%",
-          backgroundImage: "url('/background.jpg')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          filter: "blur(10px)",
-          zIndex: -1,
-        }}
-      />
-
       {/* About Me Section */}
       <Box
         sx={{
@@ -90,7 +74,7 @@ const AboutMe = forwardRef<HTMLDivElement, AboutMeProps>(({ resumeRef }, ref) =>
           mx: "auto",
         }}
       >
-        <Typography variant="body1" sx={{ color: "#ffffff" }}>
+        <Typography variant="h6" sx={{ color: "#ffffff" }}>
           Hi! I&apos;m <strong>Ben Humphries</strong>, a passionate Software Engineer with expertise in full-stack development,
           DevSecOps, and Agile methodologies. I graduated from <strong>Brigham Young University</strong> with a B.S. in
           Computer Science and a minor in Business Administration. I am currently open to work and seeking new opportunities.
@@ -121,7 +105,7 @@ const AboutMe = forwardRef<HTMLDivElement, AboutMeProps>(({ resumeRef }, ref) =>
             flexWrap: "wrap",
             justifyContent: "center",
             gap: .5,
-            marginTop: "10px"
+            marginTop: "15px"
           }}
         >
           {Object.keys(skillColors).map((skill) => (
@@ -132,7 +116,8 @@ const AboutMe = forwardRef<HTMLDivElement, AboutMeProps>(({ resumeRef }, ref) =>
                 backgroundColor: skillColors[skill],
                 color: "#ffffff",
                 fontWeight: "bold",
-                margin: "1px",  // Adjust the margin around each chip for spacing
+                margin: "2px",
+                fontSize: "1.1rem",
               }}
             />
           ))}
@@ -141,18 +126,18 @@ const AboutMe = forwardRef<HTMLDivElement, AboutMeProps>(({ resumeRef }, ref) =>
         <Typography variant="h4" sx={{ color: "#ffffff", fontWeight: "bold", my: 2 }}>
           Experience & Projects
         </Typography>
-        <Typography variant="body1" sx={{ color: "#ffffff", maxWidth: "800px", mx: "auto", mb: 3 }}>
+        <Typography variant="h6" sx={{ color: "#ffffff", maxWidth: "800px", mx: "auto", mb: 3 }}>
           I&apos;m currently a Software Engineer at <strong>Northrop Grumman</strong>. I started as an Associate Software Engineer on a DevSecOps team,
           developing CI/CD pipelines, build scripts, and containerized applications. Later, I took on a Scrum Master role, refining my leadership skills.
           After just 18 months, I was promoted to Software Engineer, where I lead the development of multiple web applications for managing software
           deployment and automation. My contributions have been recognized with multiple awards.
         </Typography>
-        <Typography variant="body1" sx={{ color: "#ffffff", maxWidth: "800px", mx: "auto", mb: 3 }}>
+        <Typography variant="h6" sx={{ color: "#ffffff", maxWidth: "800px", mx: "auto", mb: 3 }}>
           Previously, at <strong>BYU</strong>, I worked as a Software Developer for the College of Life Sciences, creating and maintaining applications
           in React and C#. As Team Lead, I managed code reviews, created user stories, and built a Vue-based system to digitize the college’s
           graduate contract process.
         </Typography>
-        <Typography variant="body1" sx={{ color: "#ffffff", maxWidth: "800px", mx: "auto" }}>
+        <Typography variant="h6" sx={{ color: "#ffffff", maxWidth: "800px", mx: "auto" }}>
           For my capstone, I collaborated with <strong>Partners Personnel</strong> to develop a Django-based payroll application that automated
           pay card processing, significantly increasing efficiency.
         </Typography>

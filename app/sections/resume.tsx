@@ -15,13 +15,13 @@ const Resume = forwardRef<HTMLDivElement, {}>((props, ref) => {
       {/* Resume content */}
       <Paper sx={{
         padding: "1.5rem",
-        backgroundColor: "rgba(18, 18, 18, 0.9)", // Slightly lighter than pure black with opacity
+        backgroundColor: "rgba(18, 18, 18, 0.9)",
         color: "#ffffff",
         borderRadius: "10px",
         mb: 2,
         textAlign: "left",
         position: "relative",
-        boxShadow: "0 4px 20px rgba(0, 0, 0, 0.5)", // Soft shadow around the Paper
+        boxShadow: "0 4px 20px rgba(0, 0, 0, 0.5)",
       }}>
         {/* Download Button positioned inside the Paper, aligned with resume content */}
         <Box sx={{ position: "absolute", top: "20px", right: "20px" }}>
@@ -29,7 +29,7 @@ const Resume = forwardRef<HTMLDivElement, {}>((props, ref) => {
             <IconButton
               href="/humphries.benjamin.pdf"
               target="_blank"
-              download="humphries.benjamin.pdf"  // Explicitly set download filename
+              download="humphries.benjamin.pdf"
               sx={{
                 backgroundColor: "#009688",
                 color: "#ffffff",
