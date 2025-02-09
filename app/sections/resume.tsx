@@ -29,7 +29,7 @@ const Resume = forwardRef<HTMLDivElement, {}>((props, ref) => {
             <IconButton
               href="/humphries.benjamin.pdf"
               target="_blank"
-              download
+              download="humphries.benjamin.pdf"  // Explicitly set download filename
               sx={{
                 backgroundColor: "#009688",
                 color: "#ffffff",

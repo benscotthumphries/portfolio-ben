@@ -3,7 +3,6 @@ import { Container, Box, Typography, IconButton } from "@mui/material";
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import TwitterIcon from '@mui/icons-material/Twitter';
 import Typewriter from "../components/typewriter";
 import { useTheme } from '@mui/material/styles';
 
@@ -87,7 +86,7 @@ const Intro = forwardRef<HTMLDivElement, IntroProps>((props, ref) => {
           display: 'flex',
           justifyContent: 'center',
           gap: 3,
-          mb: '3vh',
+          mb: '2vh',
         }}
       >
         <IconButton
@@ -130,12 +129,11 @@ const Intro = forwardRef<HTMLDivElement, IntroProps>((props, ref) => {
           backdropFilter: "blur(10px)",
           borderRadius: "20px",
           padding: "20px",
-          mt: "3vh",
           mb: "10vh",
           boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
         }}
       >
-        <Typography variant="h5" sx={{ color: theme.palette.text.primary }}>
+        <Typography variant="h6" sx={{ color: theme.palette.text.primary }}>
           I&apos;m a dedicated Software Engineer with a passion for creating innovative solutions.
           With years of experience in software development, I&apos;ve worked on building websites,
           developing DevSecOps tools, creating containers and CI/CD pipelines.
@@ -144,7 +142,7 @@ const Intro = forwardRef<HTMLDivElement, IntroProps>((props, ref) => {
       </Box>
 
       {/* Scroll down arrow icon */}
-      <Box sx={{ position: "absolute", bottom: "20px", cursor: "pointer" }}>
+      <Box sx={{ position: "absolute", bottom: "5vh", cursor: "pointer" }}>
         <IconButton
           onClick={scrollToNextSection}
           sx={{

@@ -1,12 +1,11 @@
 import React, { forwardRef, MutableRefObject } from "react";
-import { Container, Box, Typography, IconButton, Grid, Chip } from "@mui/material";
+import { Container, Box, Typography, IconButton, Chip } from "@mui/material";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 import theme from "../theme";
 
 interface AboutMeProps {
   resumeRef: MutableRefObject<HTMLElement | null>;
 }
-
 
 const skillColors: { [key: string]: string } = {
   React: "#61DAFB",
@@ -33,7 +32,6 @@ const skillColors: { [key: string]: string } = {
   Agile: "#F7B500",
 };
 
-
 const AboutMe = forwardRef<HTMLDivElement, AboutMeProps>(({ resumeRef }, ref) => {
   const scrollToResume = () => {
     resumeRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -46,13 +44,14 @@ const AboutMe = forwardRef<HTMLDivElement, AboutMeProps>(({ resumeRef }, ref) =>
       ref={ref}
       sx={{
         textAlign: "center",
-        minHeight: "100vh",
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        padding: "4rem 2rem",
         position: "relative",
+        pb: 10,
+        "@media (max-width: 1200px)": { maxWidth: "md" },
+        "@media (max-width: 900px)": { maxWidth: "sm" },
       }}
     >
       <Box sx={{ width: "100%", display: "flex", justifyContent: "center", mb: 2 }}>
@@ -85,9 +84,13 @@ const AboutMe = forwardRef<HTMLDivElement, AboutMeProps>(({ resumeRef }, ref) =>
           borderRadius: "20px",
           padding: "30px",
           boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
+          zIndex: 1,
+          mb: 3,
+          maxWidth: "800px",
+          mx: "auto",
         }}
       >
-        <Typography variant="body1" sx={{ color: "#ffffff", maxWidth: "800px", mx: "auto" }}>
+        <Typography variant="body1" sx={{ color: "#ffffff" }}>
           Hi! I&apos;m <strong>Ben Humphries</strong>, a passionate Software Engineer with expertise in full-stack development,
           DevSecOps, and Agile methodologies. I graduated from <strong>Brigham Young University</strong> with a B.S. in
           Computer Science and a minor in Business Administration. I am currently open to work and seeking new opportunities.
@@ -102,27 +105,38 @@ const AboutMe = forwardRef<HTMLDivElement, AboutMeProps>(({ resumeRef }, ref) =>
           backdropFilter: "blur(10px)",
           borderRadius: "20px",
           padding: "30px",
-          mt: "3vh",
           boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
+          zIndex: 1,
+          mb: 3,
+          maxWidth: "800px",
+          mx: "auto",
         }}
       >
         <Typography variant="h4" sx={{ color: "#ffffff", fontWeight: "bold", mb: 2 }}>
           Tech Stack & Skills
         </Typography>
-        <Grid container spacing={1} justifyContent="center">
+        <Box
+          sx={{
+            display: "flex",
+            flexWrap: "wrap",
+            justifyContent: "center",
+            gap: .5,
+            marginTop: "10px"
+          }}
+        >
           {Object.keys(skillColors).map((skill) => (
-            <Grid item key={skill}>
-              <Chip
-                label={skill}
-                sx={{
-                  backgroundColor: skillColors[skill],
-                  color: "#ffffff",
-                  fontWeight: "bold",
-                }}
-              />
-            </Grid>
+            <Chip
+              key={skill}
+              label={skill}
+              sx={{
+                backgroundColor: skillColors[skill],
+                color: "#ffffff",
+                fontWeight: "bold",
+                margin: "1px",  // Adjust the margin around each chip for spacing
+              }}
+            />
           ))}
-        </Grid>
+        </Box>
 
         <Typography variant="h4" sx={{ color: "#ffffff", fontWeight: "bold", my: 2 }}>
           Experience & Projects

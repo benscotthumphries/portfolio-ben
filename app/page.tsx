@@ -9,6 +9,7 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import Intro from './sections/intro';
 import AboutMe from './sections/about-me';
 import Resume from './sections/resume';
+import { Divider } from '@mui/material';
 
 const steps = ['Intro', 'About Me', 'Resume'];
 
@@ -112,9 +113,11 @@ function Home() {
         >
           <div id="intro" ref={introRef} style={{ position: 'relative' }}>
             <Intro />
+            <Divider sx={{ my: 3, borderColor: "#ffffff" }} />
           </div>
           <div id="aboutMe" ref={aboutMeRef} style={{ position: 'relative' }}>
             <AboutMe resumeRef={resumeRef} />
+            <Divider sx={{ my: 3, borderColor: "#ffffff" }} />
           </div>
           <div id="resume" ref={resumeRef} style={{ position: 'relative' }}>
             <Resume />
