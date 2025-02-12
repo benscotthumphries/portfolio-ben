@@ -13,6 +13,13 @@ import { Divider } from '@mui/material';
 
 const steps = ['Intro', 'About Me', 'Resume'];
 
+declare global {
+  interface Window {
+    dataLayer: any[];
+    gtag: (...args: any[]) => void;
+  }
+}
+
 function Home() {
   const introRef = React.useRef<HTMLDivElement>(null);
   const aboutMeRef = React.useRef<HTMLDivElement>(null);
@@ -59,6 +66,27 @@ function Home() {
     };
     window.addEventListener('load', handleLoad);
     return () => window.removeEventListener('load', handleLoad);
+  }, []);
+
+  // Google Analytics Script
+  React.useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=G-X2N5LP7204';
+    script.async = true;
+    document.head.appendChild(script);
+
+    script.onload = () => {
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function (...args: any[]) {
+        window.dataLayer.push(args);
+      };
+      window.gtag('js', new Date());
+      window.gtag('config', 'G-X2N5LP7204');
+    };
+
+    return () => {
+      document.head.removeChild(script);
+    };
   }, []);
 
   return (
