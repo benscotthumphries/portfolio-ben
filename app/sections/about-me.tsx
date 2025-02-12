@@ -8,28 +8,28 @@ interface AboutMeProps {
 }
 
 const skillColors: { [key: string]: string } = {
-  React: "#61DAFB",
-  "Next.js": "#000000",
+  React: "#64557B",
+  "Next.js": "#01796F",
   TypeScript: "#3178C6",
   Go: "#00ADD8",
-  Python: "#FFD43B",
+  Python: "#808000",
   "C#": "#9B4F96",
   SQL: "#4479A1",
-  Postgres: "#336791",
+  Postgres: "#CB7876",
   MySQL: "#00758F",
-  "REST APIs": "#FF5733",
+  "REST APIs": "#B4CFA4",
   Docker: "#2496ED",
   Podman: "#892CA0",
-  Ansible: "#EE0000",
+  Ansible: "#8BA47C",
   Kubernetes: "#326CE5",
-  "CI/CD": "#F16529",
-  "GitLab CI": "#FC6D26",
+  "CI/CD": "#93C572",
+  "GitLab CI": "#BBA6DD",
   SonarQube: "#4E9BCD",
   Fortify: "#5C2D91",
   Coverity: "#005571",
   Jest: "#99425B",
-  Linux: "#FCC624",
-  Agile: "#F7B500",
+  Linux: "#2E8B57",
+  Agile: "#8A9A5B",
 };
 
 const AboutMe = forwardRef<HTMLDivElement, AboutMeProps>(({ resumeRef }, ref) => {
@@ -92,7 +92,6 @@ const AboutMe = forwardRef<HTMLDivElement, AboutMeProps>(({ resumeRef }, ref) =>
           padding: "30px",
           boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
           zIndex: 1,
-          mb: 5,
           maxWidth: "800px",
           mx: "auto",
         }}

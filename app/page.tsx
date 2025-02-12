@@ -68,7 +68,7 @@ function Home() {
             sx={{
               position: 'fixed',
               top: '50%',
-              right: 20,
+              right: 30,
               transform: 'translateY(-50%)',
               display: 'flex',
               flexDirection: 'column',
@@ -115,11 +115,11 @@ function Home() {
         >
           <div id="intro" ref={introRef}>
             <Intro />
-            <Divider sx={{ borderColor: '#ffffff' }} />
+            <Divider sx={{ my: 3, borderColor: '#ffffff' }} />
           </div>
           <div id="aboutMe" ref={aboutMeRef}>
             <AboutMe resumeRef={resumeRef} />
-            <Divider sx={{ borderColor: '#ffffff' }} />
+            <Divider sx={{ my: 3, borderColor: '#ffffff' }} />
           </div>
           <div id="resume" ref={resumeRef}>
             <Resume />
