@@ -21,6 +21,7 @@ function Home() {
   // Use media query to detect mobile and tablet screens (max-width: 1024px)
   const isMobileOrTablet = useMediaQuery('(max-width:1024px)');
   const [activeStep, setActiveStep] = React.useState(0);
+  const [isLoaded, setIsLoaded] = React.useState(false);
 
   // Stable references array for sections
   const sectionRefs = React.useMemo(() => [introRef, aboutMeRef, resumeRef], []);
@@ -51,6 +52,15 @@ function Home() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [sectionRefs]);
 
+  // Mark the page as loaded when all components are ready
+  React.useEffect(() => {
+    const handleLoad = () => {
+      setIsLoaded(true);
+    };
+    window.addEventListener('load', handleLoad);
+    return () => window.removeEventListener('load', handleLoad);
+  }, []);
+
   return (
     <Container maxWidth="lg">
       <Box
@@ -63,7 +73,7 @@ function Home() {
         }}
       >
         {/* Sidebar Navigation - Hidden on Mobile and Tablet */}
-        {!isMobileOrTablet && (
+        {!isMobileOrTablet && isLoaded && (
           <Box
             sx={{
               position: 'fixed',
@@ -74,6 +84,8 @@ function Home() {
               flexDirection: 'column',
               gap: 2,
               zIndex: 10,
+              opacity: isLoaded ? 1 : 0,
+              transition: 'opacity 0.3s ease-in-out', // Smooth fade-in effect
             }}
           >
             <Stepper orientation="vertical" activeStep={activeStep}>
@@ -127,7 +139,6 @@ function Home() {
         </Box>
       </Box>
     </Container>
-
   );
 }
 
