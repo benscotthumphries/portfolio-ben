@@ -62,14 +62,20 @@ function Home() {
   }, []);
 
   return (
-    <Container maxWidth="lg">
+    <Container
+      maxWidth="lg"
+      sx={{
+        minHeight: '100vh', // Ensures the container fills the screen on mobile
+        overflowX: 'hidden', // Prevent horizontal scroll
+        position: 'relative', // For positioning content inside the container
+      }}
+    >
       <Box
         sx={{
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
           flexDirection: 'column',
-          position: 'relative',
         }}
       >
         {/* Sidebar Navigation - Hidden on Mobile and Tablet */}

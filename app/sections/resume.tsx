@@ -25,7 +25,7 @@ const Resume = forwardRef<HTMLDivElement, {}>((props, ref) => {
         boxShadow: "0 4px 20px rgba(0, 0, 0, 0.5)",
       }}>
         {/* Download Button positioned inside the Paper, aligned with resume content */}
-        <Box sx={{ position: "absolute", top: "20px", right: "20px" }}>
+        <Box sx={{ position: "absolute", top: "20px", right: "20px", paddingBottom: 0 }}>
           <Tooltip title="Download My Resume">
             <IconButton
               href="https://benscotthumphries.github.io/portfolio-ben/humphries.benjamin.pdf"
