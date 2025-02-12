@@ -45,6 +45,7 @@ const Intro = forwardRef<HTMLDivElement, IntroProps>((props, ref) => {
         alignItems: "center",
         pt: "8vh",
         position: "relative",
+        mb: 0, // Remove or set a smaller margin at the bottom
         "@media (max-width: 1200px)": { maxWidth: "md" },
         "@media (max-width: 900px)": { maxWidth: "sm" },
       }}
@@ -147,7 +148,14 @@ const Intro = forwardRef<HTMLDivElement, IntroProps>((props, ref) => {
       </Box>
 
       {/* Scroll down arrow icon moved to the bottom */}
-      <Box sx={{ position: "absolute", bottom: "5vh", cursor: "pointer" }}>
+      <Box
+        sx={{
+          display: { xs: "none", sm: "block" }, // Hides on mobile screens
+          position: "relative",
+          marginTop: "auto", // Ensures it stays at the bottom
+          marginBottom: "3vh", // Adjusts spacing
+        }}
+      >
         <IconButton
           onClick={scrollToNextSection}
           sx={{

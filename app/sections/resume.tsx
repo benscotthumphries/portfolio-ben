@@ -27,7 +27,7 @@ const Resume = forwardRef<HTMLDivElement, {}>((props, ref) => {
         <Box sx={{ position: "absolute", top: "20px", right: "20px" }}>
           <Tooltip title="Download My Resume">
             <IconButton
-              href="/humphries.benjamin.pdf"
+              href="https://benscotthumphries.github.io/portfolio-ben/humphries.benjamin.pdf"
               target="_blank"
               download="humphries.benjamin.pdf"
               sx={{

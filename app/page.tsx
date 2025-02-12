@@ -71,7 +71,7 @@ function Home() {
               flexDirection: 'column',
               gap: 2,
               zIndex: 10,
-              width: '200px', // Set a fixed width for the stepper container
+              width: '200px',
             }}
           >
             <Stepper orientation="vertical" activeStep={activeStep}>

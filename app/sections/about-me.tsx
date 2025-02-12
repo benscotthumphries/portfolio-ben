@@ -50,6 +50,7 @@ const AboutMe = forwardRef<HTMLDivElement, AboutMeProps>(({ resumeRef }, ref) =>
         alignItems: "center",
         position: "relative",
         pb: 10,
+        mt: 0, // Remove or reduce top margin
         "@media (max-width: 1200px)": { maxWidth: "md" },
         "@media (max-width: 900px)": { maxWidth: "sm" },
       }}
@@ -144,7 +145,14 @@ const AboutMe = forwardRef<HTMLDivElement, AboutMeProps>(({ resumeRef }, ref) =>
       </Box>
 
       {/* Bottom Arrow Button */}
-      <Box sx={{ position: "absolute", bottom: "20px", left: "50%", transform: "translateX(-50%)", cursor: "pointer", zIndex: 10 }}>
+      <Box
+        sx={{
+          display: { xs: "none", sm: "block" }, // Hide on mobile
+          position: "relative",
+          marginTop: "auto", // Ensure it doesn't push content down
+          marginBottom: "3vh", // Adjust spacing
+        }}
+      >
         <IconButton
           onClick={scrollToResume}
           sx={{
