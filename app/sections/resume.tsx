@@ -1,12 +1,13 @@
 import React, { forwardRef } from 'react';
 import { Typography, Box, IconButton, Paper, Tooltip } from '@mui/material';
 import GetAppIcon from "@mui/icons-material/GetApp";
+import theme from '../theme';
 
 const Resume = forwardRef<HTMLDivElement, {}>((props, ref) => {
   return (
     <>
       {/* Header with "My Resume" centered */}
-      <Box sx={{ width: "100%", display: "flex", justifyContent: "center", my: 4 }}>
+      <Box sx={{ width: "100%", display: "flex", justifyContent: "center", my: '5vh', paddingTop: theme.spacing(5), }}>
         <Typography variant="h3" sx={{ color: "#ffffff", fontWeight: "bold" }} ref={ref}>
           My Resume
         </Typography>

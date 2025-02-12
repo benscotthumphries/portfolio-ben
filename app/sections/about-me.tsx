@@ -48,14 +48,15 @@ const AboutMe = forwardRef<HTMLDivElement, AboutMeProps>(({ resumeRef }, ref) =>
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        position: "relative",
-        pb: 10,
-        mt: 0, // Remove or reduce top margin
+        minHeight: "100vh",
+        paddingTop: theme.spacing(5),
+        paddingBottom: theme.spacing(10),
+        gap: theme.spacing(6),
         "@media (max-width: 1200px)": { maxWidth: "md" },
         "@media (max-width: 900px)": { maxWidth: "sm" },
       }}
     >
-      <Box sx={{ width: "100%", display: "flex", justifyContent: "center", mb: 2 }}>
+      <Box sx={{ width: "100%", display: "flex", justifyContent: "center", mb: 3 }}>
         <Typography variant="h3" sx={{ color: "#ffffff", fontWeight: "bold" }} ref={ref}>
           About Me
         </Typography>
@@ -78,8 +79,7 @@ const AboutMe = forwardRef<HTMLDivElement, AboutMeProps>(({ resumeRef }, ref) =>
         <Typography variant="h6" sx={{ color: "#ffffff" }}>
           Hi! I&apos;m <strong>Ben Humphries</strong>, a passionate Software Engineer with expertise in full-stack development,
           DevSecOps, and Agile methodologies. I graduated from <strong>Brigham Young University</strong> with a B.S. in
-          Computer Science and a minor in Business Administration. I am currently open to work and seeking new opportunities.
-          I will be moving to Anchorage in April 2025 so looking for remote work or roles located in Anchorage, Alaska.
+          Computer Science and a minor in Business Administration.
         </Typography>
       </Box>
 
@@ -92,7 +92,7 @@ const AboutMe = forwardRef<HTMLDivElement, AboutMeProps>(({ resumeRef }, ref) =>
           padding: "30px",
           boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
           zIndex: 1,
-          mb: 3,
+          mb: 5,
           maxWidth: "800px",
           mx: "auto",
         }}
@@ -147,10 +147,10 @@ const AboutMe = forwardRef<HTMLDivElement, AboutMeProps>(({ resumeRef }, ref) =>
       {/* Bottom Arrow Button */}
       <Box
         sx={{
-          display: { xs: "none", sm: "block" }, // Hide on mobile
+          display: { xs: "none", sm: "block" },
           position: "relative",
-          marginTop: "auto", // Ensure it doesn't push content down
-          marginBottom: "3vh", // Adjust spacing
+          marginTop: "auto",
+          marginBottom: "-3vh",
         }}
       >
         <IconButton

@@ -45,7 +45,6 @@ const Intro = forwardRef<HTMLDivElement, IntroProps>((props, ref) => {
         alignItems: "center",
         pt: "8vh",
         position: "relative",
-        mb: 0, // Remove or set a smaller margin at the bottom
         "@media (max-width: 1200px)": { maxWidth: "md" },
         "@media (max-width: 900px)": { maxWidth: "sm" },
       }}
@@ -68,7 +67,7 @@ const Intro = forwardRef<HTMLDivElement, IntroProps>((props, ref) => {
       >
         <Box
           component="img"
-          src="professionalPic.jpg" // Ensure the image is in the correct path relative to this component
+          src="professionalPic.jpg"
           alt="Ben Humphries"
           sx={{
             width: "100%",
@@ -133,7 +132,6 @@ const Intro = forwardRef<HTMLDivElement, IntroProps>((props, ref) => {
           backdropFilter: "blur(10px)",
           borderRadius: "20px",
           padding: "20px",
-          mb: "10vh",
           boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
           maxWidth: "800px",
           mx: "auto",

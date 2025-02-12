@@ -56,6 +56,9 @@ function Home() {
       <Box
         sx={{
           display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          flexDirection: 'column',
           position: 'relative',
         }}
       >
@@ -71,7 +74,6 @@ function Home() {
               flexDirection: 'column',
               gap: 2,
               zIndex: 10,
-              width: '200px',
             }}
           >
             <Stepper orientation="vertical" activeStep={activeStep}>
@@ -106,25 +108,26 @@ function Home() {
         {/* Main Content */}
         <Box
           sx={{
-            marginRight: isMobileOrTablet ? 0 : 10,
             width: '100%',
-            paddingLeft: isMobileOrTablet ? 0 : '220px',
+            maxWidth: '800px',
+            textAlign: 'center',
           }}
         >
-          <div id="intro" ref={introRef} style={{ position: 'relative' }}>
+          <div id="intro" ref={introRef}>
             <Intro />
-            <Divider sx={{ my: 3, borderColor: "#ffffff" }} />
+            <Divider sx={{ borderColor: '#ffffff' }} />
           </div>
-          <div id="aboutMe" ref={aboutMeRef} style={{ position: 'relative' }}>
+          <div id="aboutMe" ref={aboutMeRef}>
             <AboutMe resumeRef={resumeRef} />
-            <Divider sx={{ my: 3, borderColor: "#ffffff" }} />
+            <Divider sx={{ borderColor: '#ffffff' }} />
           </div>
-          <div id="resume" ref={resumeRef} style={{ position: 'relative' }}>
+          <div id="resume" ref={resumeRef}>
             <Resume />
           </div>
         </Box>
       </Box>
     </Container>
+
   );
 }
 
