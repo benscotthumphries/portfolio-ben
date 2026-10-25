@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #05070d;
+  --color-surface: rgb(11 16 27 / 0.82);
+  --color-line: rgb(148 163 184 / 0.14);
+  --color-fg: #e6edf7;
+  --color-muted: #8b97ab;
+  --color-accent: #2dd4bf;
+  --color-accent-2: #818cf8;
+
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+
+  --animate-blink: blink 1s step-end infinite;
+  --animate-drift: drift 24s ease-in-out infinite alternate;
+
+  @keyframes blink {
+    50% { opacity: 0; }
+  }
+  @keyframes drift {
+    to { transform: translate3d(6vw, 4vh, 0) scale(1.15); }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+  color-scheme: dark;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-fg);
+}
+
+::selection {
+  background: rgb(45 212 191 / 0.3);
+}
+
+@layer components {
+  .card {
+    @apply rounded-2xl border border-line bg-surface;
+  }
+  .section-title {
+    @apply font-mono text-sm tracking-widest text-accent uppercase;
+  }
+  .gradient-text {
+    @apply bg-gradient-to-r from-accent to-accent-2 bg-clip-text text-transparent;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+/* Printing the page produces a clean, one-column resume. */
+@media print {
+  @page { margin: 0.5in; }
+  html, body { background: white !important; color: black !important; font-size: 11pt; }
+  .card { background: none !important; border: none !important; padding: 0 !important; }
+  .print-plain, .print-plain * { color: black !important; background: none !important; box-shadow: none !important; }
+  a { text-decoration: none; }
+  section { break-inside: auto; padding: 0 !important; min-height: 0 !important; }
+  li, article { break-inside: avoid; }
+}

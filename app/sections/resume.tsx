@@ -1,179 +1,86 @@
-import React, { forwardRef } from 'react';
-import { Typography, Box, IconButton, Paper, Tooltip } from '@mui/material';
-import GetAppIcon from "@mui/icons-material/GetApp";
-import theme from '../theme';
+import { GraduationCap } from "lucide-react";
+import PrintButton from "../components/print-button";
+import Reveal from "../components/reveal";
+import Section from "../components/section";
+import { education, experience, profile, skills, socials } from "../data";
 
-const Resume = forwardRef<HTMLDivElement, {}>((props, ref) => {
+export default function Resume() {
   return (
-    <>
-      {/* Header with "My Resume" centered */}
-      <Box sx={{ width: "100%", display: "flex", justifyContent: "center", my: '5vh', paddingTop: theme.spacing(5), }}>
-        <Typography variant="h3" sx={{ color: "#ffffff", fontWeight: "bold" }} ref={ref}>
-          My Resume
-        </Typography>
-      </Box>
+    <Section id="resume" label="02 · Resume" title="Experience" className="print-plain print:flex print:flex-col">
+      {/* Only shown when printing, so the PDF has a proper header above "Experience". */}
+      <header className="mb-6 hidden text-center print:-order-1 print:block">
+        <h1 className="text-2xl font-bold">{profile.name}</h1>
+        <p className="text-sm">
+          {profile.email} · {socials.linkedin.replace("https://www.", "")} · {socials.github.replace("https://", "")}
+        </p>
+      </header>
 
-      {/* Resume content */}
-      <Paper sx={{
-        padding: "1.5rem",
-        backgroundColor: "rgba(18, 18, 18, 0.9)",
-        color: "#ffffff",
-        borderRadius: "10px",
-        mb: 2,
-        textAlign: "left",
-        position: "relative",
-        boxShadow: "0 4px 20px rgba(0, 0, 0, 0.5)",
-      }}>
-        {/* Download Button positioned inside the Paper, aligned with resume content */}
-        <Box sx={{ position: "absolute", top: "20px", right: "20px", paddingBottom: 0 }}>
-          <Tooltip title="Download My Resume">
-            <IconButton
-              href="https://benscotthumphries.github.io/portfolio-ben/humphries.benjamin.pdf"
-              target="_blank"
-              download="humphries.benjamin.pdf"
-              sx={{
-                backgroundColor: "#009688",
-                color: "#ffffff",
-                padding: "0.5rem",
-                borderRadius: "50%",
-                boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
-                '&:hover': {
-                  backgroundColor: "#00796b",
-                  animation: 'bounce 0.6s ease-in-out',
-                },
-              }}
-            >
-              <GetAppIcon sx={{ fontSize: "1.5rem" }} />
-            </IconButton>
-          </Tooltip>
-        </Box>
+      <div className="-mt-6 mb-10 flex justify-end">
+        <PrintButton />
+      </div>
 
-        {/* Contact Information */}
-        <Typography variant="h6" sx={{ fontWeight: "bold", mb: 1, textAlign: "center" }}>
-          Ben Humphries
-        </Typography>
-        <Typography variant="body1" sx={{ mb: 2, textAlign: "center" }}>
-          benscotthumphries@gmail.com | (505) 459-3819
-        </Typography>
+      <ol className="relative space-y-10 border-l border-line pl-6 sm:pl-8 print:space-y-4 print:border-0 print:pl-0">
+        {experience.map((job) => (
+          <li key={job.company} className="relative">
+            <span className="absolute top-2 -left-[calc(1.5rem+5.5px)] size-2.5 rounded-full bg-accent shadow-[0_0_12px] shadow-accent sm:-left-[calc(2rem+5.5px)] print:hidden" />
+            <Reveal>
+              <div className="flex flex-wrap items-baseline justify-between gap-x-4">
+                <h3 className="text-xl font-semibold print:text-base">{job.company}</h3>
+                <p className="text-sm text-muted">{job.location}</p>
+              </div>
 
-        {/* Education */}
-        <Typography variant="h6" sx={{ color: "#009688", fontWeight: "bold", mt: 3 }}>
-          Education
-        </Typography>
-        <Typography variant="body1" sx={{ mt: 1 }}>
-          <strong>Brigham Young University</strong>  (Aug. 2018 - Apr. 2023)
-        </Typography>
-        <Typography variant="body1" sx={{ mt: 1 }}>
-          - B.S. in Computer Science with an emphasis in Software Engineering
-        </Typography>
-        <Typography variant="body1" sx={{ mt: 1 }}>
-          - Minor in Business Administration
-        </Typography>
-        <Typography variant="body1" sx={{ mt: 1 }}>
-          - GPA: 3.55
-        </Typography>
+              <div className="mt-3 space-y-5 print:mt-1 print:space-y-2">
+                {job.roles.map((role) => (
+                  <article key={role.title} className="card p-5 sm:p-6">
+                    <div className="flex flex-wrap items-baseline justify-between gap-x-4">
+                      <h4 className="font-medium text-accent">{role.title}</h4>
+                      <p className="font-mono text-xs text-muted">{role.dates}</p>
+                    </div>
+                    <ul className="mt-3 list-disc space-y-1.5 pl-5 text-muted marker:text-accent/60 print:mt-1 print:space-y-0.5 print:text-sm">
+                      {role.bullets.map((bullet) => (
+                        <li key={bullet}>{bullet}</li>
+                      ))}
+                    </ul>
+                  </article>
+                ))}
+              </div>
+            </Reveal>
+          </li>
+        ))}
+      </ol>
 
-        {/* Work Experience */}
-        <Typography variant="h6" sx={{ color: "#009688", fontWeight: "bold", mt: 3 }}>
-          Professional Experience
-        </Typography>
+      <div className="mt-16 print:mt-4">
+        <Reveal className="card p-6">
+          <h3 className="flex items-center gap-2 font-semibold">
+            <GraduationCap className="size-5 text-accent print:hidden" /> Education
+          </h3>
+          <p className="mt-3 font-medium">{education.school}</p>
+          <p className="text-muted">{education.degree}</p>
+          <p className="text-muted">{education.minor}</p>
+          <p className="mt-1 font-mono text-xs text-muted">
+            {education.location} · {education.dates}
+          </p>
+        </Reveal>
+      </div>
 
-        <Typography variant="body1" sx={{ mt: 2, fontSize: "1.1rem", fontWeight: "bold" }}>
-          Northrop Grumman - Software Engineer (Oct 2024 - Present)
-        </Typography>
-        <Typography variant="body1" sx={{ mt: 1 }}>
-          - Developed a web-based tool to automate software deployment onto appropriate hardware in testing labs, streamlining workflows.
-        </Typography>
-        <Typography variant="body1" sx={{ mt: 1 }}>
-          - Designed a user-friendly interface for managing and updating a PostgreSQL database, improving data accessibility.
-        </Typography>
-        <Typography variant="body1" sx={{ mt: 1 }}>
-          - Led agile teams as a Scrum Master, mentoring engineers and ensuring project milestones.
-        </Typography>
-
-        <Typography variant="body1" sx={{ mt: 2, fontSize: "1.1rem", fontWeight: "bold" }}>
-          Northrop Grumman - Associate Software Engineer (June 2023 - Oct 2024)
-        </Typography>
-        <Typography variant="body1" sx={{ mt: 1 }}>
-          - Built a web application using React and Go to coordinate artifact delivery and optimize testing lab workflows.
-        </Typography>
-        <Typography variant="body1" sx={{ mt: 1 }}>
-          - Developed secure and reusable Docker/Podman images for streamlined software deployment.
-        </Typography>
-        <Typography variant="body1" sx={{ mt: 1 }}>
-          - Automated pipelines via GitLab for CI/CD efficiency.
-        </Typography>
-        <Typography variant="body1" sx={{ mt: 1 }}>
-          - Created Ansible scripts for infrastructure automation, reducing setup times.
-        </Typography>
-
-        <Typography variant="body1" sx={{ mt: 2, fontSize: "1.1rem", fontWeight: "bold" }}>
-          Brigham Young University - Full-Stack Software Engineer (Jul 2021 - Apr 2023)
-        </Typography>
-        <Typography variant="body1" sx={{ mt: 1 }}>
-          - Developed Vue & C# applications for managing graduate contracts, enhancing workflow efficiency.
-        </Typography>
-        <Typography variant="body1" sx={{ mt: 1 }}>
-          - Created a React-based reservation system for conference rooms and vehicles.
-        </Typography>
-        <Typography variant="body1" sx={{ mt: 1 }}>
-          - Built REST APIs in C# with ASP.NET core for database management.
-        </Typography>
-
-        <Typography variant="body1" sx={{ mt: 2, fontSize: "1.1rem", fontWeight: "bold" }}>
-          Partners Personnel - Software Engineering Intern (Sept 2022 - Apr 2023)
-        </Typography>
-        <Typography variant="body1" sx={{ mt: 1 }}>
-          - Developed a Django-based web app to automate payroll processing, reducing payroll time by 8 hours per cycle.
-        </Typography>
-        <Typography variant="body1" sx={{ mt: 1 }}>
-          - Automated file format conversions for payroll consistency.
-        </Typography>
-
-        {/* Skills & Certifications */}
-        <Typography variant="h6" sx={{ color: "#009688", fontWeight: "bold", mt: 3 }}>
-          Skills & Certifications
-        </Typography>
-        <Typography variant="body1" sx={{ mt: 1 }}>
-          - Programming Languages: TypeScript, JavaScript, Go, Python, C#
-        </Typography>
-        <Typography variant="body1" sx={{ mt: 1 }}>
-          - Frameworks & Libraries: React, Vue, .NET, REST APIs
-        </Typography>
-        <Typography variant="body1" sx={{ mt: 1 }}>
-          - Tools & Platforms: Docker, Ansible, Git, PostgreSQL, CI/CD
-        </Typography>
-        <Typography variant="body1" sx={{ mt: 1 }}>
-          - Certifications: SAFe 6 Practitioner (Scaled Agile)
-        </Typography>
-
-        {/* Interests */}
-        <Typography variant="h6" sx={{ color: "#009688", fontWeight: "bold", mt: 3 }}>
-          Interests
-        </Typography>
-        <Typography variant="body1" sx={{ mt: 1 }}>
-          🦅 Eagle Scout | 🤿 Open Water Scuba Certified (Got lost at sea for an hour!) | 💻 Tech Enthusiast
-        </Typography>
-      </Paper>
-
-      <style jsx>{`
-        @keyframes bounce {
-          0% {
-            transform: scale(1);
-          }
-          50% {
-            transform: scale(1.1); // Bounce effect
-          }
-          100% {
-            transform: scale(1);
-          }
-        }
-      `}</style>
-    </>
+      <h3 className="mt-16 mb-6 text-2xl font-bold tracking-tight print:mt-4 print:mb-2 print:text-base">Skills</h3>
+      <div className="grid gap-4 md:grid-cols-3 print:gap-1">
+        {skills.map(({ category, items }, i) => (
+          <Reveal key={category} delay={i * 0.1} className="card p-6">
+            <h4 className="font-mono text-sm text-accent">{category}</h4>
+            <ul className="mt-4 flex flex-wrap gap-2 print:mt-1 print:block">
+              {items.map((item) => (
+                <li
+                  key={item}
+                  className="rounded-full border border-line bg-white/5 px-3 py-1 text-sm transition hover:border-accent/50 hover:text-accent print:inline print:border-0 print:p-0 print:after:content-[',_'] print:last:after:content-none"
+                >
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </Reveal>
+        ))}
+      </div>
+    </Section>
   );
-});
-
-// Set the displayName for debugging purposes
-Resume.displayName = "Resume";
-
-export default Resume;
+}

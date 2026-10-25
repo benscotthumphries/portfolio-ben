@@ -1,65 +1,44 @@
 "use client";
-import React, { useState, useEffect } from "react";
-import { Typography } from "@mui/material";
 
-interface TypewriterProps {
-  words: string[];
-}
+import { useEffect, useState } from "react";
 
-const Typewriter: React.FC<TypewriterProps> = ({ words }) => {
-  const [currentIndex, setCurrentIndex] = useState<number>(0);
-  const [currentWord, setCurrentWord] = useState<string>("");
-  const [charIndex, setCharIndex] = useState<number>(0);
-  const [isDeleting, setIsDeleting] = useState<boolean>(false);
-  const [isClient, setIsClient] = useState(false);
+const TYPE_MS = 90;
+const DELETE_MS = 45;
+const PAUSE_MS = 1600;
+
+export default function Typewriter({ words }: { words: string[] }) {
+  const [wordIndex, setWordIndex] = useState(0);
+  const [text, setText] = useState("");
+  const [deleting, setDeleting] = useState(false);
 
   useEffect(() => {
-    setIsClient(true);
-  }, []);
+    const word = words[wordIndex];
+    let delay = deleting ? DELETE_MS : TYPE_MS;
+    let next = () => setText(deleting ? text.slice(0, -1) : word.slice(0, text.length + 1));
 
-  useEffect(() => {
-    if (!isClient) return;
-
-    const typingSpeed = isDeleting ? 50 : 100;
-    const pauseTime = 1500;
-
-    if (!isDeleting && charIndex === words[currentIndex].length) {
-      setTimeout(() => setIsDeleting(true), pauseTime);
-      return;
+    if (!deleting && text === word) {
+      delay = PAUSE_MS;
+      next = () => setDeleting(true);
+    } else if (deleting && text === "") {
+      delay = TYPE_MS;
+      next = () => {
+        setDeleting(false);
+        setWordIndex((i) => (i + 1) % words.length);
+      };
     }
 
-    if (isDeleting && charIndex === 0) {
-      setIsDeleting(false);
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % words.length);
-      return;
-    }
-
-    const typeTimeout = setTimeout(() => {
-      setCurrentWord((prev) =>
-        isDeleting ? prev.slice(0, -1) : words[currentIndex].slice(0, charIndex + 1)
-      );
-      setCharIndex((prev) => (isDeleting ? prev - 1 : prev + 1));
-    }, typingSpeed);
-
-    return () => clearTimeout(typeTimeout);
-  }, [charIndex, isDeleting, currentIndex, words, isClient]);
-
-  if (!isClient) {
-    return null;
-  }
+    const timeout = setTimeout(next, delay);
+    return () => clearTimeout(timeout);
+  }, [text, deleting, wordIndex, words]);
 
   return (
-    <Typography variant="h6" sx={{ mb: 2, textAlign: "center" }}>
-      I am a <span style={{ fontWeight: "bold" }}>{currentWord}</span>
-      <span style={{ animation: "blink 1s infinite" }}>|</span>
-      <style jsx>{`
-        @keyframes blink {
-          0%, 100% { opacity: 1; }
-          50% { opacity: 0; }
-        }
-      `}</style>
-    </Typography>
+    <span aria-label={words.join(", ")}>
+      <span aria-hidden className="gradient-text font-semibold">
+        {text}
+      </span>
+      <span aria-hidden className="animate-blink ml-0.5 text-accent">
+        ▍
+      </span>
+    </span>
   );
-};
-
-export default Typewriter;
+}
