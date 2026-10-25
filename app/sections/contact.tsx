@@ -6,7 +6,7 @@ import { profile, socials } from "../data";
 
 export default function Contact() {
   return (
-    <Section id="contact" label="05 · Contact" title="Let's talk" className="print:hidden">
+    <Section id="contact" title="Let's talk" className="print:hidden">
       <Reveal className="card relative overflow-hidden p-8 text-center sm:p-12">
         <div className="absolute inset-x-0 -top-24 mx-auto h-48 w-2/3 rounded-full bg-accent/20 blur-3xl" />
         <p className="relative mx-auto max-w-xl text-lg text-muted">

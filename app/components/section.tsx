@@ -3,13 +3,11 @@ import Reveal from "./reveal";
 
 export default function Section({
   id,
-  label,
   title,
   children,
   className = "",
 }: {
   id: string;
-  label: string;
   title: ReactNode;
   children: ReactNode;
   className?: string;
@@ -17,8 +15,10 @@ export default function Section({
   return (
     <section id={id} className={`mx-auto max-w-5xl px-4 py-24 sm:px-6 ${className}`}>
       <Reveal>
-        <p className="section-title print:hidden">{label}</p>
-        <h2 className="mt-2 mb-10 text-3xl font-bold tracking-tight sm:text-4xl print:mb-4 print:text-xl">{title}</h2>
+        <h2 className="mb-10 text-3xl font-bold tracking-tight sm:text-4xl print:mb-4 print:text-xl">
+          <span className="mr-3 inline-block h-[0.6em] w-1.5 rounded-full bg-accent align-baseline print:hidden" />
+          {title}
+        </h2>
       </Reveal>
       {children}
     </section>

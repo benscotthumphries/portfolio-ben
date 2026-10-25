@@ -42,9 +42,6 @@ body {
   .card {
     @apply rounded-2xl border border-line bg-surface;
   }
-  .section-title {
-    @apply font-mono text-sm tracking-widest text-accent uppercase;
-  }
   .gradient-text {
     @apply bg-gradient-to-r from-accent to-accent-2 bg-clip-text text-transparent;
   }

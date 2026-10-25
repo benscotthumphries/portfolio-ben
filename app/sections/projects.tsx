@@ -6,7 +6,7 @@ import { projects } from "../data";
 
 export default function Projects() {
   return (
-    <Section id="projects" label="04 · Projects" title="Things I've built" className="print:hidden">
+    <Section id="projects" title="Things I've built" className="print:hidden">
       <div className="grid gap-4 md:grid-cols-2">
         {projects.map(({ name, description, tags, href, source }, i) => (
           <Reveal key={name} delay={i * 0.1}>

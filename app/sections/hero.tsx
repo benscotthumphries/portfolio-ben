@@ -11,8 +11,14 @@ export default function Hero() {
     <section id="top" className="relative mx-auto flex min-h-svh max-w-5xl items-center px-4 pt-16 sm:px-6 print:hidden">
       <div className="grid w-full items-center gap-12 md:grid-cols-[1fr_auto]">
         <Reveal className="order-2 text-center md:order-1 md:text-left">
-          <p className="font-mono text-sm text-accent">Hi, my name is</p>
-          <h1 className="mt-3 text-5xl font-bold tracking-tight sm:text-7xl">{profile.name}</h1>
+          <p className="inline-flex items-center gap-2 rounded-full border border-line bg-surface px-3 py-1 font-mono text-xs text-muted">
+            <span className="relative flex size-2">
+              <span className="absolute inline-flex size-full animate-ping rounded-full bg-green-400/60" />
+              <span className="relative inline-flex size-2 rounded-full bg-green-400" />
+            </span>
+            {profile.status}
+          </p>
+          <h1 className="mt-4 text-5xl font-bold tracking-tight sm:text-7xl">{profile.name}</h1>
           <p className="mt-4 h-9 text-2xl text-muted sm:text-3xl">
             I&apos;m a <Typewriter words={profile.typewriter} />
           </p>

@@ -6,7 +6,7 @@ import { education, experience, profile, skills, socials } from "../data";
 
 export default function Resume() {
   return (
-    <Section id="resume" label="02 · Resume" title="Experience" className="print-plain print:flex print:flex-col">
+    <Section id="resume" title="Experience" className="print-plain print:flex print:flex-col">
       {/* Only shown when printing, so the PDF has a proper header above "Experience". */}
       <header className="mb-6 hidden text-center print:-order-1 print:block">
         <h1 className="text-2xl font-bold">{profile.name}</h1>

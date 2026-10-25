@@ -5,8 +5,9 @@ export const profile = {
   title: "Software Engineer & IT Specialist",
   email: "benscotthumphries@gmail.com",
   availability: "Based in Alaska and open to remote roles.",
+  status: "Open to remote roles · Alaska",
   tagline:
-    "I write software, run IT for a trust company, and host my own services on a homelab I'm always tinkering with.",
+    "I run IT for a trust company, write the software it runs on, and spend my free time breaking my homelab.",
   typewriter: ["Software Engineer", "IT Specialist", "DevOps Engineer", "Homelabber", "Husband"],
 };
 
@@ -16,10 +17,15 @@ export const socials = {
 };
 
 export const about = [
-  "I'm the IT Specialist and Software Developer at Kodiak Trust Company in Alaska, where I handle everything technical: Microsoft 365 and Entra ID, a 25-extension phone system, networking, storage, and backups. I'm also building the company's internal trust administration platform in Next.js and PostgreSQL, so I get to both keep the lights on and write the software people use every day.",
-  "Before that I spent two years at Northrop Grumman, starting on a DevSecOps team writing CI/CD pipelines, container images, and Ansible automation, then moving into a Software Engineer role building web tools and serving as Scrum Master.",
-  "Outside of work I'm an Eagle Scout, a certified scuba diver (I once got lost at sea for over an hour on my first ocean dive), and I love spending time outdoors with my family.",
+  "Right now I'm the whole IT department at Kodiak Trust Company in Alaska. If it logs in, plugs in, or rings, it's probably mine: Microsoft 365, Entra ID, a 25-extension phone system, the network, and the backups. I'm also building the company's trust administration platform in Next.js and PostgreSQL, so I write the software and keep the servers under it running.",
+  "Before Kodiak I spent two years at Northrop Grumman. I started in DevSecOps writing pipelines, container images, and Ansible playbooks, got promoted to Software Engineer, built lab deployment tools, and ran our sprints as Scrum Master.",
+  "When I'm not working, I'm tinkering with my homelab or outside with my family. I'm also an Eagle Scout.",
 ];
+
+export const funFact = {
+  headline: "On my first ocean dive, I got lost at sea for over an hour.",
+  detail: "I'm still a certified diver. Staying calm when things go sideways has come in handy in IT ever since.",
+};
 
 export const highlights = [
   { value: "5+", label: "Years shipping software" },
