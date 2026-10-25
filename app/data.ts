@@ -22,7 +22,7 @@ export const about = [
 ];
 
 export const highlights = [
-  { value: "3+", label: "Years shipping software" },
+  { value: "5+", label: "Years shipping software" },
   { value: "Solo", label: "IT admin for a 9-person company" },
   { value: "6–8", label: "Dev team led as Scrum Master" },
 ];
