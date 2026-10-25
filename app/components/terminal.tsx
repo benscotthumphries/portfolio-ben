@@ -164,7 +164,7 @@ const commands: Record<string, Command> = {
       print(
         ...homelab.services.map(({ name, description }) => (
           <span key={name}>
-            <span className="text-green-400">●</span> <span className="text-accent">{name.padEnd(16)}</span>
+            <span className="text-emerald-500">●</span> <span className="text-accent">{name.padEnd(16)}</span>
             <span className="text-muted">{description}</span>
           </span>
         )),

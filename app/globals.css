@@ -1,13 +1,13 @@
 @import "tailwindcss";
 
 @theme {
-  --color-bg: #05070d;
-  --color-surface: rgb(11 16 27 / 0.82);
+  --color-bg: #0a0f1a;
+  --color-surface: rgb(16 23 38 / 0.82);
   --color-line: rgb(148 163 184 / 0.14);
   --color-fg: #e6edf7;
   --color-muted: #8b97ab;
-  --color-accent: #2dd4bf;
-  --color-accent-2: #818cf8;
+  --color-accent: #6b9bd1;
+  --color-accent-2: #a9bcd8;
 
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, monospace;
@@ -35,7 +35,7 @@ body {
 }
 
 ::selection {
-  background: rgb(45 212 191 / 0.3);
+  background: rgb(107 155 209 / 0.3);
 }
 
 @layer components {

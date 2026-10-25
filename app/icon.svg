@@ -1,21 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <defs>
-    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#2dd4bf" />
-      <stop offset="1" stop-color="#818cf8" />
-    </linearGradient>
-    <radialGradient id="glow" cx="0.3" cy="0.2" r="0.9">
-      <stop offset="0" stop-color="#2dd4bf" stop-opacity="0.22" />
-      <stop offset="1" stop-color="#2dd4bf" stop-opacity="0" />
-    </radialGradient>
-  </defs>
-  <rect width="32" height="32" rx="7" fill="#05070d" />
-  <rect width="32" height="32" rx="7" fill="url(#glow)" />
-  <rect x="0.5" y="0.5" width="31" height="31" rx="6.5" fill="none" stroke="#94a3b8" stroke-opacity="0.18" />
+  <rect width="32" height="32" rx="7" fill="#101a2c" />
   <!-- A lowercase "b" drawn as network links, with nodes at the joints. -->
-  <path d="M11 7.5V24.5M11 14.5h5.5a5 5 0 0 1 0 10H11" fill="none" stroke="url(#g)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" />
-  <circle cx="11" cy="7.5" r="2.7" fill="#2dd4bf" />
-  <circle cx="21.5" cy="19.5" r="2.7" fill="#818cf8" />
-  <circle cx="11" cy="24.5" r="2.7" fill="#5fb0dc" />
-  <circle cx="21.5" cy="19.5" r="1" fill="#ffffff" />
+  <path d="M11 7.5V24.5M11 14.5h5.5a5 5 0 0 1 0 10H11" fill="none" stroke="#e6ebf2" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" />
+  <circle cx="11" cy="7.5" r="2.7" fill="#e6ebf2" />
+  <circle cx="11" cy="24.5" r="2.7" fill="#e6ebf2" />
+  <circle cx="21.5" cy="19.5" r="2.9" fill="#6b9bd1" />
 </svg>

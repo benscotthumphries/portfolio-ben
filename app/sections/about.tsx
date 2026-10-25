@@ -25,7 +25,7 @@ export default function About() {
 
       <Reveal delay={0.1}>
         <figure className="card relative mt-8 overflow-hidden p-6 sm:p-8">
-          <div className="absolute -right-16 -bottom-16 size-56 rounded-full bg-accent-2/15 blur-3xl" />
+          <div className="absolute -right-16 -bottom-16 size-56 rounded-full bg-accent/10 blur-3xl" />
           <div className="relative flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-6">
             <LifeBuoy className="size-12 shrink-0 text-accent" strokeWidth={1.5} />
             <div>

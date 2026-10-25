@@ -10,8 +10,8 @@ const LINK_DISTANCE_SQ = LINK_DISTANCE ** 2;
 const MOUSE_DISTANCE = 200;
 const PACKET_RADIUS = 6;
 const MAX_PACKETS = 18;
-const ACCENT = "45, 212, 191";
-const ACCENT_2 = "129, 140, 248";
+const ACCENT = "107, 155, 209";
+const ACCENT_2 = "169, 188, 216";
 
 // Animated network topology: drifting nodes, links between neighbors,
 // and "packets" travelling along those links.
@@ -30,8 +30,8 @@ export default function NetworkBackground() {
     sprite.width = sprite.height = PACKET_RADIUS * 4;
     const spriteCtx = sprite.getContext("2d")!;
     const glow = spriteCtx.createRadialGradient(PACKET_RADIUS * 2, PACKET_RADIUS * 2, 0, PACKET_RADIUS * 2, PACKET_RADIUS * 2, PACKET_RADIUS * 2);
-    glow.addColorStop(0, "rgba(255, 255, 255, 0.95)");
-    glow.addColorStop(0.4, `rgba(${ACCENT}, 0.6)`);
+    glow.addColorStop(0, "rgba(225, 234, 245, 0.8)");
+    glow.addColorStop(0.4, `rgba(${ACCENT}, 0.35)`);
     glow.addColorStop(1, `rgba(${ACCENT}, 0)`);
     spriteCtx.fillStyle = glow;
     spriteCtx.fillRect(0, 0, sprite.width, sprite.height);
@@ -81,7 +81,7 @@ export default function NetworkBackground() {
           if (distSq > LINK_DISTANCE_SQ) continue;
 
           const dist = Math.sqrt(distSq);
-          ctx.strokeStyle = `rgba(${ACCENT}, ${(1 - dist / LINK_DISTANCE) * 0.18})`;
+          ctx.strokeStyle = `rgba(${ACCENT}, ${(1 - dist / LINK_DISTANCE) * 0.14})`;
           ctx.lineWidth = 1;
           ctx.beginPath();
           ctx.moveTo(a.x, a.y);
@@ -98,7 +98,7 @@ export default function NetworkBackground() {
       for (const n of nodes) {
         const dist = Math.hypot(n.x - mouse.x, n.y - mouse.y);
         if (dist > MOUSE_DISTANCE) continue;
-        ctx.strokeStyle = `rgba(${ACCENT_2}, ${(1 - dist / MOUSE_DISTANCE) * 0.45})`;
+        ctx.strokeStyle = `rgba(${ACCENT_2}, ${(1 - dist / MOUSE_DISTANCE) * 0.3})`;
         ctx.beginPath();
         ctx.moveTo(mouse.x, mouse.y);
         ctx.lineTo(n.x, n.y);
@@ -106,7 +106,7 @@ export default function NetworkBackground() {
       }
 
       for (const n of nodes) {
-        ctx.fillStyle = `rgba(${ACCENT}, 0.7)`;
+        ctx.fillStyle = `rgba(${ACCENT}, 0.5)`;
         ctx.beginPath();
         ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
         ctx.fill();
@@ -157,8 +157,8 @@ export default function NetworkBackground() {
   return (
     <div aria-hidden className="pointer-events-none fixed inset-0 -z-10 overflow-hidden print:hidden">
       {/* Soft glows via radial gradients; a CSS blur filter here is expensive to animate. */}
-      <div className="animate-drift absolute -top-1/4 -left-1/4 h-[70vmax] w-[70vmax] bg-[radial-gradient(circle,rgb(45_212_191/0.1),transparent_65%)] will-change-transform" />
-      <div className="animate-drift absolute -right-1/4 -bottom-1/4 h-[60vmax] w-[60vmax] bg-[radial-gradient(circle,rgb(129_140_248/0.1),transparent_65%)] will-change-transform [animation-delay:-12s]" />
+      <div className="animate-drift absolute -top-1/4 -left-1/4 h-[70vmax] w-[70vmax] bg-[radial-gradient(circle,rgb(107_155_209/0.07),transparent_65%)] will-change-transform" />
+      <div className="animate-drift absolute -right-1/4 -bottom-1/4 h-[60vmax] w-[60vmax] bg-[radial-gradient(circle,rgb(169_188_216/0.05),transparent_65%)] will-change-transform [animation-delay:-12s]" />
       <div className="absolute inset-0 bg-[linear-gradient(to_right,rgb(148_163_184/0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgb(148_163_184/0.05)_1px,transparent_1px)] bg-[size:48px_48px] [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_75%)]" />
       <canvas ref={canvasRef} className="absolute inset-0 h-full w-full" />
     </div>

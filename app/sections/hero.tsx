@@ -13,8 +13,7 @@ export default function Hero() {
         <Reveal className="order-2 text-center md:order-1 md:text-left">
           <p className="inline-flex items-center gap-2 rounded-full border border-line bg-surface px-3 py-1 font-mono text-xs text-muted">
             <span className="relative flex size-2">
-              <span className="absolute inline-flex size-full animate-ping rounded-full bg-green-400/60" />
-              <span className="relative inline-flex size-2 rounded-full bg-green-400" />
+              <span className="inline-flex size-2 rounded-full bg-emerald-500" />
             </span>
             {profile.status}
           </p>
@@ -50,7 +49,7 @@ export default function Hero() {
 
         <Reveal delay={0.15} className="order-1 mx-auto md:order-2">
           <div className="relative size-56 sm:size-72">
-            <div className="absolute -inset-1 animate-[spin_8s_linear_infinite] rounded-full bg-[conic-gradient(var(--color-accent),var(--color-accent-2),transparent_60%,var(--color-accent))] opacity-80 will-change-transform" />
+            <div className="absolute -inset-1 animate-[spin_8s_linear_infinite] rounded-full bg-[conic-gradient(var(--color-accent),var(--color-accent-2),transparent_60%,var(--color-accent))] opacity-50 will-change-transform" />
             <Image
               src={portrait}
               alt={profile.name}

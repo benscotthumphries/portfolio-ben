@@ -23,8 +23,7 @@ export default function Homelab() {
               <p className="flex items-center gap-2 font-mono text-sm font-medium">
                 {name}
                 <span className="relative flex size-2">
-                  <span className="absolute inline-flex size-full animate-ping rounded-full bg-green-400/60" />
-                  <span className="relative inline-flex size-2 rounded-full bg-green-400" />
+                  <span className="inline-flex size-2 rounded-full bg-emerald-500" />
                 </span>
               </p>
               <p className="mt-1 text-sm text-muted">{description}</p>
