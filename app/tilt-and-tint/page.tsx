@@ -40,7 +40,7 @@ const build = [
 export default function TiltAndTint() {
   return (
     <SubPage>
-      <p className="font-mono text-sm text-accent">Coming soon to Google Play</p>
+      <p className="font-mono text-sm text-accent">Coming soon to Google Play · Basement Box Games</p>
       <h1 className="mt-2 text-4xl font-bold tracking-tight sm:text-5xl">Tilt &amp; Tint</h1>
       <p className="mt-4 max-w-xl text-lg text-muted">{description}</p>
 
