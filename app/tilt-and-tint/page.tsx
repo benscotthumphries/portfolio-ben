@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
 import SubPage from "../components/sub-page";
 import menu from "../assets/tilt-and-tint/menu.webp";
 import paint from "../assets/tilt-and-tint/paint.webp";
@@ -76,9 +75,13 @@ export default function TiltAndTint() {
       </ul>
 
       <p className="mt-16 text-sm text-muted">
-        <Link href="/tilt-and-tint/privacy" className="text-accent hover:underline">
+        <a href="https://basementboxgames.com/tilt-and-tint/" className="text-accent hover:underline">
+          basementboxgames.com
+        </a>{" "}
+        ·{" "}
+        <a href="https://basementboxgames.com/tilt-and-tint/privacy/" className="text-accent hover:underline">
           Privacy policy
-        </Link>
+        </a>
       </p>
     </SubPage>
   );

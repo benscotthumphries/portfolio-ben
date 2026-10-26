@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import SubPage, { Prose } from "../components/sub-page";
 import { profile } from "../data";
 
@@ -16,7 +15,7 @@ export default function Privacy() {
       <Prose>
         <p className="mt-8">
           This is the personal website of {profile.name}. This policy covers what information this website collects when you
-          visit it. My game Tilt &amp; Tint has <Link href="/tilt-and-tint/privacy">its own privacy policy</Link>.
+          visit it. My game Tilt &amp; Tint has <a href="https://basementboxgames.com/tilt-and-tint/privacy/">its own privacy policy</a>.
         </p>
 
         <h2>Analytics, only if you agree</h2>
