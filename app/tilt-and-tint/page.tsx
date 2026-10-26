@@ -26,7 +26,7 @@ const features = [
   ["One swipe moves everything", "Tilt the board and every block slides until it hits something. Plan where they'll stop."],
   ["8 worlds, 240 levels", "Stones, sticky moss, mirror blocks that slide the opposite way, twins, and paint that mixes on collision."],
   ["A hard daily puzzle", "The same puzzle for everyone each day, with a different mechanic each weekday and a shareable result."],
-  ["Fair by design", "No forced ads. Half the worlds are free forever; one purchase unlocks the rest."],
+  ["Fair by design", "No ads, ever. Half the worlds are free forever; one purchase unlocks the rest."],
 ];
 
 const build = [
