@@ -2,28 +2,28 @@ import { ArrowUpRight } from "lucide-react";
 import type { Metadata } from "next";
 import Image from "next/image";
 import SubPage from "../components/sub-page";
-import menu from "../assets/tilt-and-tint/menu.webp";
-import paint from "../assets/tilt-and-tint/paint.webp";
-import prism from "../assets/tilt-and-tint/prism.webp";
-import themes from "../assets/tilt-and-tint/themes.webp";
+import menu from "../assets/slidescape/menu.webp";
+import paint from "../assets/slidescape/paint.webp";
+import prism from "../assets/slidescape/prism.webp";
+import themes from "../assets/slidescape/themes.webp";
 
-const description = "A sliding block puzzle game for Android: tilt the board, mix the colors.";
+const description = "A sliding block puzzle game for Android: one swipe slides everything, mix the colors.";
 
 export const metadata: Metadata = {
-  title: "Tilt & Tint",
+  title: "Slidescape",
   description,
-  openGraph: { title: "Tilt & Tint", description, type: "website" },
+  openGraph: { title: "Slidescape", description, type: "website" },
 };
 
 const shots = [
-  { src: menu, alt: "Tilt & Tint title screen with a demo board" },
+  { src: menu, alt: "Slidescape title screen with a demo board" },
   { src: paint, alt: "A paint level: slide yellow into blue to make green" },
   { src: prism, alt: "A Prism level on a dark starry theme" },
   { src: themes, alt: "The theme picker with eleven themes" },
 ];
 
 const features = [
-  ["One swipe moves everything", "Tilt the board and every block slides until it hits something. Plan where they'll stop."],
+  ["One swipe moves everything", "Swipe once and every block slides until it hits something. Plan where they'll stop."],
   ["8 worlds, 240 levels", "Stones, sticky moss, mirror blocks that slide the opposite way, twins, and paint that mixes on collision."],
   ["A hard daily puzzle", "The same puzzle for everyone each day, with a different mechanic each weekday and a shareable result."],
   ["Fair by design", "No ads, ever. Half the worlds are free forever; one purchase unlocks the rest."],
@@ -37,18 +37,18 @@ const build = [
   "Color-blind symbols on every block",
 ];
 
-export default function TiltAndTint() {
+export default function Slidescape() {
   return (
     <SubPage>
       <p className="font-mono text-sm text-accent">A Basement Box Games project · Coming soon to Google Play</p>
-      <h1 className="mt-2 text-4xl font-bold tracking-tight sm:text-5xl">Tilt &amp; Tint</h1>
+      <h1 className="mt-2 text-4xl font-bold tracking-tight sm:text-5xl">Slidescape</h1>
       <p className="mt-4 max-w-xl text-lg text-muted">{description}</p>
       <p className="mt-4 max-w-xl text-muted">
-        I built Tilt &amp; Tint under Basement Box Games, my indie game studio. This page covers how it&apos;s made; the game&apos;s
+        I built Slidescape under Basement Box Games, my indie game studio. This page covers how it&apos;s made; the game&apos;s
         own page has everything for players.
       </p>
       <a
-        href="https://basementboxgames.com/tilt-and-tint/"
+        href="https://basementboxgames.com/slidescape/"
         className="mt-6 inline-flex items-center gap-2 rounded-full bg-accent px-5 py-2.5 text-sm font-medium text-bg transition hover:bg-accent/85"
       >
         Visit basementboxgames.com <ArrowUpRight className="size-4" />
@@ -86,11 +86,11 @@ export default function TiltAndTint() {
       </ul>
 
       <p className="mt-16 text-sm text-muted">
-        <a href="https://basementboxgames.com/tilt-and-tint/" className="text-accent hover:underline">
+        <a href="https://basementboxgames.com/slidescape/" className="text-accent hover:underline">
           basementboxgames.com
         </a>{" "}
         ·{" "}
-        <a href="https://basementboxgames.com/tilt-and-tint/privacy/" className="text-accent hover:underline">
+        <a href="https://basementboxgames.com/slidescape/privacy/" className="text-accent hover:underline">
           Privacy policy
         </a>
       </p>

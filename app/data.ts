@@ -180,11 +180,11 @@ export const projects: Project[] = [
     href: "https://basementboxgames.com",
   },
   {
-    name: "Tilt & Tint",
+    name: "Slidescape",
     description:
-      "The first Basement Box Games release: a sliding block puzzle for Android. Tilt the board and every block slides; collide paints to mix new colors. 240 solver-verified levels and a daily puzzle.",
+      "The first Basement Box Games release: a sliding block puzzle for Android. One swipe and every block slides; collide paints to mix new colors. 240 solver-verified levels and a daily puzzle.",
     tags: ["Godot", "GDScript", "Game design"],
-    href: "/tilt-and-tint",
+    href: "/slidescape",
   },
   {
     name: "Trust administration platform",
