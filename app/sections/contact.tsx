@@ -1,5 +1,6 @@
 import { Mail } from "lucide-react";
 import Link from "next/link";
+import CookieSettingsButton from "../components/cookie-settings-button";
 import { GitHubIcon, LinkedInIcon } from "../components/icons";
 import Reveal from "../components/reveal";
 import Section from "../components/section";
@@ -33,7 +34,8 @@ export default function Contact() {
         © {new Date().getFullYear()} {profile.name} · Built with Next.js and too many containers. ·{" "}
         <Link href="/privacy" className="transition hover:text-accent">
           Privacy
-        </Link>
+        </Link>{" "}
+        · <CookieSettingsButton />
       </footer>
     </Section>
   );

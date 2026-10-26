@@ -1,7 +1,7 @@
-import { GoogleAnalytics } from "@next/third-parties/google";
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import type { ReactNode } from "react";
+import CookieConsent from "./components/cookie-consent";
 import { profile } from "./data";
 import "./globals.css";
 
@@ -25,7 +25,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
       <body className="font-sans antialiased">
         {children}
-        <GoogleAnalytics gaId="G-X2N5LP7204" />
+        <CookieConsent gaId="G-X2N5LP7204" />
       </body>
     </html>
   );

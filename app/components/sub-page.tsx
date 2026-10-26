@@ -2,6 +2,7 @@ import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { profile } from "../data";
+import CookieSettingsButton from "./cookie-settings-button";
 
 // Shell for standalone pages (project pages, privacy policies): a back link, a narrow column and a footer.
 export default function SubPage({ back = { href: "/", label: "Back to portfolio" }, children }: {
@@ -24,7 +25,8 @@ export default function SubPage({ back = { href: "/", label: "Back to portfolio"
         © {new Date().getFullYear()} {profile.name} ·{" "}
         <Link href="/privacy" className="transition hover:text-accent">
           Privacy
-        </Link>
+        </Link>{" "}
+        · <CookieSettingsButton />
       </footer>
     </>
   );

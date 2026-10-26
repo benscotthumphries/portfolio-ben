@@ -19,25 +19,36 @@ export default function Privacy() {
           visit it. My game Tilt &amp; Tint has <Link href="/tilt-and-tint/privacy">its own privacy policy</Link>.
         </p>
 
-        <h2>Analytics</h2>
+        <h2>Analytics, only if you agree</h2>
         <p>
-          This site uses <strong>Google Analytics</strong> to understand how many people visit and which pages they read. Google
-          Analytics sets cookies in your browser (named <code>_ga</code> and similar) and collects information such as the pages
-          you view, how you arrived at the site, your browser and device type, and your approximate location, which is derived from
-          your IP address. I see this only as combined, anonymous statistics. I do not use it to identify you, and I do not run
-          advertising on this site.
+          With your permission, this site uses <strong>Google Analytics</strong> to understand how many people visit and which pages
+          they read. Nothing loads until you choose <strong>Accept</strong> in the cookie banner. If you choose Decline, or your browser
+          sends a Global Privacy Control signal, Google Analytics is never loaded and no analytics cookies are set.
         </p>
         <p>
-          Google processes this data under the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>; see also{" "}
+          If you accept, Google Analytics sets cookies in your browser (named <code>_ga</code> and similar) and collects information
+          such as the pages you view, how you arrived at the site, your browser and device type, and your approximate location,
+          derived from your IP address. I see this only as combined, anonymous statistics. I do not use it to identify you, and I do
+          not run advertising on this site. Google processes this data under the{" "}
+          <a href="https://policies.google.com/privacy">Google Privacy Policy</a>; see also{" "}
           <a href="https://policies.google.com/technologies/partner-sites">how Google uses information from sites that use its
-          services</a>. Google Analytics keeps this data for a limited time (no more than 14 months).
+          services</a>. It is kept for no more than 14 months.
         </p>
 
-        <h2>Opting out</h2>
+        <h2>Changing your mind</h2>
         <p>
-          You can block or delete cookies in your browser settings, use a content blocker, or install the{" "}
-          <a href="https://tools.google.com/dlpage/gaoptout">Google Analytics opt-out browser add-on</a>. The site works the same
-          either way.
+          Use <strong>Cookie settings</strong> at the bottom of any page to change your choice at any time. Declining after accepting
+          switches analytics off and deletes its cookies. You can also block cookies in your browser or install the{" "}
+          <a href="https://tools.google.com/dlpage/gaoptout">Google Analytics opt-out browser add-on</a>. The site works the same either
+          way.
+        </p>
+
+        <h2>Your rights</h2>
+        <p>
+          The legal basis for analytics is your consent, which you can withdraw at any time. Depending on where you live (for example
+          under the GDPR in the EU and UK, or the CCPA in California), you may have the right to access, correct or delete personal
+          data about you, and to object to its use. Because I only see anonymous totals, I usually hold nothing that identifies you,
+          but email me and I will help. I do not sell or share personal information.
         </p>
 
         <h2>Everything else</h2>
