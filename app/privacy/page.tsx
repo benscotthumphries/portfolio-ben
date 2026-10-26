@@ -22,8 +22,8 @@ export default function Privacy() {
         <h2>Analytics, only if you agree</h2>
         <p>
           With your permission, this site uses <strong>Google Analytics</strong> to understand how many people visit and which pages
-          they read. Nothing loads until you choose <strong>Accept</strong> in the cookie banner. If you choose Decline, or your browser
-          sends a Global Privacy Control signal, Google Analytics is never loaded and no analytics cookies are set.
+          they read. Nothing loads until you choose <strong>Accept</strong> in the cookie banner. If you choose Decline, Google
+          Analytics is never loaded and no analytics cookies are set.
         </p>
         <p>
           If you accept, Google Analytics sets cookies in your browser (named <code>_ga</code> and similar) and collects information

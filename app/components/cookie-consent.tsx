@@ -4,8 +4,8 @@ import Link from "next/link";
 import Script from "next/script";
 import { useEffect, useState } from "react";
 
-// Google Analytics only loads after the visitor accepts. Declining is as easy as accepting, a
-// Global Privacy Control signal counts as declining, and "Cookie settings" reopens the banner.
+// Google Analytics only loads after the visitor accepts. Anyone without a saved choice is asked,
+// declining is as easy as accepting, and "Cookie settings" reopens the banner.
 
 const STORAGE_KEY = "cookie-consent";
 const OPEN_EVENT = "open-cookie-settings";
@@ -50,9 +50,7 @@ export default function CookieConsent({ gaId }: { gaId: string }) {
   useEffect(() => {
     const load = () => {
       const saved = savedChoice();
-      const gpc = (navigator as Navigator & { globalPrivacyControl?: boolean }).globalPrivacyControl;
       if (saved) setChoice(saved);
-      else if (gpc) setChoice("denied");
       else setOpen(true);
     };
     load();
