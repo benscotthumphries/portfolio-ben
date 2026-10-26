@@ -5,7 +5,7 @@ import SubPage from "../components/sub-page";
 import menu from "../assets/slidescape/menu.webp";
 import paint from "../assets/slidescape/paint.webp";
 import prism from "../assets/slidescape/prism.webp";
-import themes from "../assets/slidescape/themes.webp";
+import moss from "../assets/slidescape/moss.webp";
 
 const description = "A sliding block puzzle game for Android: one swipe slides everything, mix the colors.";
 
@@ -17,9 +17,9 @@ export const metadata: Metadata = {
 
 const shots = [
   { src: menu, alt: "Slidescape title screen with a demo board" },
-  { src: paint, alt: "A paint level: slide yellow into blue to make green" },
+  { src: moss, alt: "A Moss level: sticky tiles stop blocks dead" },
+  { src: paint, alt: "A Paint level: red, blue and yellow paint to mix" },
   { src: prism, alt: "A Prism level on a dark starry theme" },
-  { src: themes, alt: "The theme picker with eleven themes" },
 ];
 
 const features = [
