@@ -1,4 +1,5 @@
 import { Mail } from "lucide-react";
+import Link from "next/link";
 import { GitHubIcon, LinkedInIcon } from "../components/icons";
 import Reveal from "../components/reveal";
 import Section from "../components/section";
@@ -29,7 +30,10 @@ export default function Contact() {
       </Reveal>
 
       <footer className="mt-16 text-center font-mono text-xs text-muted">
-        © {new Date().getFullYear()} {profile.name} · Built with Next.js and too many containers.
+        © {new Date().getFullYear()} {profile.name} · Built with Next.js and too many containers. ·{" "}
+        <Link href="/privacy" className="transition hover:text-accent">
+          Privacy
+        </Link>
       </footer>
     </Section>
   );

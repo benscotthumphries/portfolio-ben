@@ -1,4 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
+import Link from "next/link";
 import { GitHubIcon } from "../components/icons";
 import Reveal from "../components/reveal";
 import Section from "../components/section";
@@ -12,7 +13,12 @@ export default function Projects() {
           <Reveal key={name} delay={i * 0.1}>
             <article className="card group relative flex h-full flex-col p-6 transition hover:-translate-y-1 hover:border-accent/40">
               <h3 className="flex items-center justify-between font-semibold">
-                {href ? (
+                {href?.startsWith("/") ? (
+                  // Pages on this site go through Link so the GitHub Pages base path is applied.
+                  <Link href={href} className="after:absolute after:inset-0">
+                    {name}
+                  </Link>
+                ) : href ? (
                   // Stretched link: the whole card is clickable without nesting the Source link inside it.
                   <a href={href} target="_blank" rel="noopener noreferrer" className="after:absolute after:inset-0">
                     {name}

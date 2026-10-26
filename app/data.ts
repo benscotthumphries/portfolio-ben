@@ -173,6 +173,13 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    name: "Tilt & Tint",
+    description:
+      "A sliding block puzzle game for Android: tilt the board and every block slides; collide paints to mix new colours. 240 solver-verified levels and a daily puzzle.",
+    tags: ["Godot", "GDScript", "Game design"],
+    href: "/tilt-and-tint",
+  },
+  {
     name: "Trust administration platform",
     description:
       "Internal hub at Kodiak Trust for trust officers to manage trusts, with Microsoft Entra ID sign-in, automated financial data feeds from external APIs, and SharePoint document tracking.",
