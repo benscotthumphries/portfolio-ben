@@ -1,3 +1,4 @@
+import { ArrowUpRight } from "lucide-react";
 import type { Metadata } from "next";
 import Image from "next/image";
 import SubPage from "../components/sub-page";
@@ -6,7 +7,7 @@ import paint from "../assets/tilt-and-tint/paint.webp";
 import prism from "../assets/tilt-and-tint/prism.webp";
 import themes from "../assets/tilt-and-tint/themes.webp";
 
-const description = "A sliding block puzzle game for Android: tilt the board, mix the colours.";
+const description = "A sliding block puzzle game for Android: tilt the board, mix the colors.";
 
 export const metadata: Metadata = {
   title: "Tilt & Tint",
@@ -32,16 +33,26 @@ const build = [
   "Godot 4 and GDScript",
   "Breadth-first solver proves every level is solvable and sets its par",
   "Procedural level and daily generator with difficulty ramps",
-  "All art drawn in code and all sound synthesised at runtime",
-  "Colour-blind symbols on every block",
+  "All art drawn in code and all sound synthesized at runtime",
+  "Color-blind symbols on every block",
 ];
 
 export default function TiltAndTint() {
   return (
     <SubPage>
-      <p className="font-mono text-sm text-accent">Coming soon to Google Play · Basement Box Games</p>
+      <p className="font-mono text-sm text-accent">A Basement Box Games project · Coming soon to Google Play</p>
       <h1 className="mt-2 text-4xl font-bold tracking-tight sm:text-5xl">Tilt &amp; Tint</h1>
       <p className="mt-4 max-w-xl text-lg text-muted">{description}</p>
+      <p className="mt-4 max-w-xl text-muted">
+        I built Tilt &amp; Tint under Basement Box Games, my indie game studio. This page covers how it&apos;s made; the game&apos;s
+        own page has everything for players.
+      </p>
+      <a
+        href="https://basementboxgames.com/tilt-and-tint/"
+        className="mt-6 inline-flex items-center gap-2 rounded-full bg-accent px-5 py-2.5 text-sm font-medium text-bg transition hover:bg-accent/85"
+      >
+        Visit basementboxgames.com <ArrowUpRight className="size-4" />
+      </a>
 
       <div className="mt-10 flex snap-x gap-4 overflow-x-auto pb-4 sm:grid sm:grid-cols-4 sm:overflow-visible">
         {shots.map(({ src, alt }) => (
