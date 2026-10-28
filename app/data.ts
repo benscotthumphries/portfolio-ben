@@ -19,7 +19,7 @@ export const socials = {
 export const about = [
   "Right now I'm the whole IT department at Kodiak Trust Company in Alaska. If it logs in, plugs in, or rings, it's probably mine: Microsoft 365, Entra ID, a 25-extension phone system, the network, and the backups. I'm also building the company's trust administration platform in Next.js and PostgreSQL, so I write the software and keep the servers under it running.",
   "Before Kodiak I spent two years at Northrop Grumman. I started in DevSecOps writing pipelines, container images, and Ansible playbooks, got promoted to Software Engineer, built lab deployment tools, and ran our sprints as Scrum Master.",
-  "When I'm not working, I'm building games at Basement Box Games, my small indie studio, tinkering with my homelab, or outside with my family. I'm also an Eagle Scout.",
+  "When I'm not working, I'm making games in my basement as Basement Box Games, tinkering with my homelab, or outside with my family. I'm also an Eagle Scout.",
 ];
 
 export const funFact = {
@@ -175,14 +175,14 @@ export const projects: Project[] = [
   {
     name: "Basement Box Games",
     description:
-      "My indie game studio. I design, build, and publish small, fair games: no ad walls, no tricks. The studio site runs on Next.js and Cloudflare.",
+      "My indie game label: I make the games I like to play, in my free time, from my basement. The studio site runs on Next.js and Cloudflare.",
     tags: ["Game dev", "Next.js", "Cloudflare"],
     href: "https://basementboxgames.com",
   },
   {
     name: "Slidescape",
     description:
-      "The first Basement Box Games release: a sliding block puzzle for Android. One swipe and every block slides; collide paints to mix new colors. 240 solver-verified levels and a daily puzzle.",
+      "The first Basement Box Games release: a sliding block puzzle for Android where one swipe moves every block and each world adds a new twist. 240 solver-verified levels and a daily puzzle.",
     tags: ["Godot", "GDScript", "Game design"],
     href: "/slidescape",
   },

@@ -7,7 +7,7 @@ import paint from "../assets/slidescape/paint.webp";
 import prism from "../assets/slidescape/prism.webp";
 import moss from "../assets/slidescape/moss.webp";
 
-const description = "A sliding block puzzle game for Android: one swipe slides everything, mix the colors.";
+const description = "A sliding block puzzle game for Android: one swipe moves every block, and each world adds a new twist.";
 
 export const metadata: Metadata = {
   title: "Slidescape",
@@ -26,7 +26,7 @@ const features = [
   ["One swipe moves everything", "Swipe once and every block slides until it hits something. Plan where they'll stop."],
   ["8 worlds, 240 levels", "Stones, sticky moss, mirror blocks that slide the opposite way, portals, paint that mixes on collision and prism tiles that recolor."],
   ["A hard daily puzzle", "The same puzzle for everyone each day, with a different mechanic each weekday and a shareable result."],
-  ["Fair by design", "No ads, ever. Half the worlds are free forever; one purchase unlocks the rest."],
+  ["Free to start", "The first four worlds and the daily puzzle are free; one purchase unlocks the rest."],
 ];
 
 const build = [
@@ -44,7 +44,7 @@ export default function Slidescape() {
       <h1 className="mt-2 text-4xl font-bold tracking-tight sm:text-5xl">Slidescape</h1>
       <p className="mt-4 max-w-xl text-lg text-muted">{description}</p>
       <p className="mt-4 max-w-xl text-muted">
-        I built Slidescape under Basement Box Games, my indie game studio. This page covers how it&apos;s made; the game&apos;s
+        I built Slidescape as Basement Box Games, the name I make games under in my free time. This page covers how it&apos;s made; the game&apos;s
         own page has everything for players.
       </p>
       <a
