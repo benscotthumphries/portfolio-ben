@@ -19,12 +19,12 @@ const shots = [
   { src: menu, alt: "Slidescape title screen with a demo board" },
   { src: moss, alt: "A Moss level: sticky tiles stop blocks dead" },
   { src: paint, alt: "A Paint level: red, blue and yellow paint to mix" },
-  { src: prism, alt: "A Prism level on a dark starry theme" },
+  { src: prism, alt: "A Prism level: glowing tiles recolor blocks" },
 ];
 
 const features = [
   ["One swipe moves everything", "Swipe once and every block slides until it hits something. Plan where they'll stop."],
-  ["8 worlds, 240 levels", "Stones, sticky moss, mirror blocks that slide the opposite way, twins, and paint that mixes on collision."],
+  ["8 worlds, 240 levels", "Stones, sticky moss, mirror blocks that slide the opposite way, portals, paint that mixes on collision and prism tiles that recolor."],
   ["A hard daily puzzle", "The same puzzle for everyone each day, with a different mechanic each weekday and a shareable result."],
   ["Fair by design", "No ads, ever. Half the worlds are free forever; one purchase unlocks the rest."],
 ];
