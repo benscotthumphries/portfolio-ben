@@ -92,6 +92,10 @@ export default function Slidescape() {
         ·{" "}
         <a href="https://basementboxgames.com/slidescape/privacy/" className="text-accent hover:underline">
           Privacy policy
+        </a>{" "}
+        ·{" "}
+        <a href="https://basementboxgames.com/slidescape/terms/" className="text-accent hover:underline">
+          Terms of service
         </a>
       </p>
     </SubPage>
