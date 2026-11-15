@@ -6,6 +6,7 @@ import menu from "../assets/slidescape/menu.webp";
 import paint from "../assets/slidescape/paint.webp";
 import prism from "../assets/slidescape/prism.webp";
 import moss from "../assets/slidescape/moss.webp";
+import icon from "../assets/slidescape/icon.webp";
 
 const description = "A sliding block puzzle game for Android: one swipe moves every block, and each world adds a new twist.";
 
@@ -25,14 +26,15 @@ const shots = [
 const features = [
   ["One swipe moves everything", "Swipe once and every block slides until it hits something. Plan where they'll stop."],
   ["8 worlds, 240 levels", "Stones, sticky moss, mirror blocks that slide the opposite way, portals, paint that mixes on collision and prism tiles that recolor."],
-  ["A hard daily puzzle", "The same puzzle for everyone each day, with a different mechanic each weekday and a shareable result."],
-  ["Free to start", "The first four worlds and the daily puzzle are free; one purchase unlocks the rest."],
+  ["A daily puzzle that builds all week", "The same puzzle for everyone each day, a different mechanic each weekday, gentle on Monday and tough by Big Sunday, with hints and a shareable score and time."],
+  ["Free to start", "The first four worlds and the daily puzzle are free, with a free daily hint; one purchase unlocks the rest."],
 ];
 
 const build = [
   "Godot 4 and GDScript",
   "Breadth-first solver proves every level is solvable and sets its par",
   "Procedural level and daily generator with difficulty ramps",
+  "Daily difficulty tuned with simulated players: puzzles nobody could realistically find are replaced",
   "All art drawn in code and all sound synthesized at runtime",
   "Color-blind symbols on every block",
 ];
@@ -41,7 +43,10 @@ export default function Slidescape() {
   return (
     <SubPage>
       <p className="font-mono text-sm text-accent">A Basement Box Games project · Coming soon to Google Play</p>
-      <h1 className="mt-2 text-4xl font-bold tracking-tight sm:text-5xl">Slidescape</h1>
+      <div className="mt-2 flex items-center gap-4">
+        <Image src={icon} alt="" className="size-14 rounded-2xl border border-line sm:size-16" priority />
+        <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">Slidescape</h1>
+      </div>
       <p className="mt-4 max-w-xl text-lg text-muted">{description}</p>
       <p className="mt-4 max-w-xl text-muted">
         I built Slidescape as Basement Box Games, the name I make games under in my free time. This page covers how it&apos;s made; the game&apos;s
