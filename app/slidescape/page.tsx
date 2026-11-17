@@ -42,7 +42,7 @@ const build = [
 export default function Slidescape() {
   return (
     <SubPage>
-      <p className="font-mono text-sm text-accent">A Basement Box Games project · Coming soon to Google Play</p>
+      <p className="font-mono text-sm text-accent">A Basement Box Games project · Out now on Google Play</p>
       <div className="mt-2 flex items-center gap-4">
         <Image src={icon} alt="" className="size-14 rounded-2xl border border-line sm:size-16" priority />
         <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">Slidescape</h1>
@@ -52,12 +52,20 @@ export default function Slidescape() {
         I built Slidescape as Basement Box Games, the name I make games under in my free time. This page covers how it&apos;s made; the game&apos;s
         own page has everything for players.
       </p>
-      <a
-        href="https://basementboxgames.com/slidescape/"
-        className="mt-6 inline-flex items-center gap-2 rounded-full bg-accent px-5 py-2.5 text-sm font-medium text-bg transition hover:bg-accent/85"
-      >
-        Visit basementboxgames.com <ArrowUpRight className="size-4" />
-      </a>
+      <div className="mt-6 flex flex-wrap gap-3">
+        <a
+          href="https://play.google.com/store/apps/details?id=com.basementboxgames.slidescape"
+          className="inline-flex items-center gap-2 rounded-full bg-accent px-5 py-2.5 text-sm font-medium text-bg transition hover:bg-accent/85"
+        >
+          Get it on Google Play <ArrowUpRight className="size-4" />
+        </a>
+        <a
+          href="https://basementboxgames.com/slidescape/"
+          className="inline-flex items-center gap-2 rounded-full border border-line px-5 py-2.5 text-sm font-medium transition hover:border-accent"
+        >
+          Visit basementboxgames.com <ArrowUpRight className="size-4" />
+        </a>
+      </div>
 
       <div className="mt-10 flex snap-x gap-4 overflow-x-auto pb-4 sm:grid sm:grid-cols-4 sm:overflow-visible">
         {shots.map(({ src, alt }) => (

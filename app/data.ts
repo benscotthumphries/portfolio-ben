@@ -182,7 +182,7 @@ export const projects: Project[] = [
   {
     name: "Slidescape",
     description:
-      "The first Basement Box Games release: a sliding block puzzle for Android where one swipe moves every block and each world adds a new twist. 240 solver-verified levels and a daily puzzle.",
+      "The first Basement Box Games release, out now on Google Play: a sliding block puzzle for Android where one swipe moves every block and each world adds a new twist. 240 solver-verified levels and a daily puzzle.",
     tags: ["Godot", "GDScript", "Game design"],
     href: "/slidescape",
   },
